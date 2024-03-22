@@ -2,11 +2,14 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/example/hello/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/libc/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/libc/target" />
       <excludeFolder url="file://$MODULE_DIR$/rust/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/rust/build" />
       <excludeFolder url="file://$MODULE_DIR$/rust/target" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/copilot/chatSessions" />
+      <excludeFolder url="file://$MODULE_DIR$/example/hello/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
