@@ -13,7 +13,11 @@
     <cargoProject FILE="$PROJECT_DIR$/example/hello/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update project" />
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update project">
+      <change afterPath="$PROJECT_DIR$/rust/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.03.17-2024.03.23-work-log.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="ep6wzz28" />
@@ -53,8 +58,8 @@
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/diandianjun/os-educg/project2210132-226009/libc",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/diandianjun/os-educg/project2210132-226009/rust",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,9 +73,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libc" />
-      <recent name="$PROJECT_DIR$/libc/src" />
-      <recent name="$PROJECT_DIR$/example/hello" />
+      <recent name="$PROJECT_DIR$/rust" />
+      <recent name="$PROJECT_DIR$/rust/library/std" />
+      <recent name="$PROJECT_DIR$/rust/library/std/src/sys/pal/unix" />
+      <recent name="$PROJECT_DIR$/rust/compiler/rustc_target/src/spec/base" />
+      <recent name="$PROJECT_DIR$/rust/compiler/rustc_target/src/spec/targets" />
     </key>
   </component>
   <component name="RustProjectSettings">
@@ -90,6 +97,8 @@
       <workItem from="1711079919378" duration="2614000" />
       <workItem from="1711084192567" duration="70000" />
       <workItem from="1711084271496" duration="1416000" />
+      <workItem from="1711085693618" duration="292000" />
+      <workItem from="1711087299592" duration="3234000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -131,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711085137758</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update project">
+      <option name="closed" value="true" />
+      <created>1711085785072</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711085785072</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update project">
+      <option name="closed" value="true" />
+      <created>1711088765447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711088765447</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
