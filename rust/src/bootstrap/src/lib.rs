@@ -1361,7 +1361,7 @@ impl Build {
     /// Returns an optional "runner" to pass to `compiletest` when executing
     /// test binaries.
     ///
-    /// An example of this would be a WebAssembly runtime when testing the wasm
+    /// An examples of this would be a WebAssembly runtime when testing the wasm
     /// targets.
     fn runner(&self, target: TargetSelection) -> Option<String> {
         let configured_runner =
@@ -1462,7 +1462,7 @@ impl Build {
     /// Given `num` in the form "a.b.c" return a "release string" which
     /// describes the release version number.
     ///
-    /// For example on nightly this returns "a.b.c-nightly", on beta it returns
+    /// For examples on nightly this returns "a.b.c-nightly", on beta it returns
     /// "a.b.c-beta.1" and on stable it just returns "a.b.c".
     fn release(&self, num: &str) -> String {
         match &self.config.channel[..] {

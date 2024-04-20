@@ -395,7 +395,7 @@ cfg_if! {
         #[cfg_attr(feature = "rustc-dep-of-std",
                    link(name = "c", cfg(not(target_feature = "crt-static"))))]
         extern {}
-    } else if #[cfg(target_env = "aix")] {
+    } else if #[cfg(target_os = "aix")] {
         #[link(name = "c")]
         #[link(name = "m")]
         #[link(name = "bsd")]
@@ -1426,7 +1426,7 @@ cfg_if! {
             )]
             #[allow(non_autolinks)] // FIXME: `<>` breaks line length limit.
             /// The 64-bit libc on Solaris and illumos only has readdir_r. If a
-            /// 32-bit Solaris or illumos targets is ever created, it should use
+            /// 32-bit Solaris or illumos target is ever created, it should use
             /// __posix_readdir_r. See libc(3LIB) on Solaris or illumos:
             /// https://illumos.org/man/3lib/libc
             /// https://docs.oracle.com/cd/E36784_01/html/E36873/libc-3lib.html

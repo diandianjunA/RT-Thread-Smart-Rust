@@ -11,12 +11,26 @@
   <component name="CargoProjects">
     <cargoProject FILE="$PROJECT_DIR$/libc/Cargo.toml" />
     <cargoProject FILE="$PROJECT_DIR$/example/hello/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/rtsmart-std/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/marco_main/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/examples/example1/hello/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/examples/example2/hello/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update project">
-      <change afterPath="$PROJECT_DIR$/rust/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.03.17-2024.03.23-work-log.md" afterDir="false" />
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update test case">
+      <change afterPath="$PROJECT_DIR$/worklog/img/2024.04.15-2024.04.21-work-log/qemu内的应用程序.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/img/2024.04.15-2024.04.21-work-log/应用程序.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/img/2024.04.15-2024.04.21-work-log/运行结果.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.03.24-2024.03.31-work-log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.04.01-2024.04.07-work-log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.04.08-2024.04.14-work-log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.04.15-2024.04.21-work-log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.03.24-2024.03.31-work-log.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.04.01-2024.04.07-work-log.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.04.08-2024.04.14-work-log.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.04.15-2024.04.21-work-log.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/markdown/2024.03.17-2024.03.23-work-log.md" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/markdown/2024.03.17-2024.03.23-work-log.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +55,7 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2dlMIIhnAdYzm7hy3rXfIcql1wB" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -59,7 +73,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/diandianjun/os-educg/project2210132-226009/rust",
+    "last_opened_file_path": "/home/diandianjun/os-educg/project2210132-226009/examples/example2/hello/Cargo.toml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,17 +81,20 @@
     "nodejs_package_manager_path": "npm",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/example2/hello" />
+      <recent name="$PROJECT_DIR$/examples/example2" />
       <recent name="$PROJECT_DIR$/rust" />
       <recent name="$PROJECT_DIR$/rust/library/std" />
       <recent name="$PROJECT_DIR$/rust/library/std/src/sys/pal/unix" />
-      <recent name="$PROJECT_DIR$/rust/compiler/rustc_target/src/spec/base" />
-      <recent name="$PROJECT_DIR$/rust/compiler/rustc_target/src/spec/targets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/example1" />
     </key>
   </component>
   <component name="RustProjectSettings">
@@ -99,6 +116,18 @@
       <workItem from="1711084271496" duration="1416000" />
       <workItem from="1711085693618" duration="292000" />
       <workItem from="1711087299592" duration="3234000" />
+      <workItem from="1711282382357" duration="8000" />
+      <workItem from="1711411889365" duration="8000" />
+      <workItem from="1711592553569" duration="1507000" />
+      <workItem from="1712207843798" duration="17000" />
+      <workItem from="1713502002288" duration="1751000" />
+      <workItem from="1713507155900" duration="463000" />
+      <workItem from="1713590207490" duration="255000" />
+      <workItem from="1713605857236" duration="311000" />
+      <workItem from="1713606173669" duration="536000" />
+      <workItem from="1713606716026" duration="2979000" />
+      <workItem from="1713620380405" duration="59000" />
+      <workItem from="1713620447032" duration="7888000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -156,7 +185,39 @@
       <option name="project" value="LOCAL" />
       <updated>1711088765447</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update standard library">
+      <option name="closed" value="true" />
+      <created>1713605988152</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713605988152</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update standard library">
+      <option name="closed" value="true" />
+      <created>1713620542417</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713620542417</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update test case">
+      <option name="closed" value="true" />
+      <created>1713632683816</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1713632683816</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update test case">
+      <option name="closed" value="true" />
+      <created>1713633102293</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713633102293</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,9 +236,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/libc" />
+      <path value="$PROJECT_DIR$/marco_main" />
+      <path value="$PROJECT_DIR$/rtsmart-std" />
+    </ignored-roots>
     <MESSAGE value="update work log" />
     <MESSAGE value="update project" />
-    <option name="LAST_COMMIT_MESSAGE" value="update project" />
+    <MESSAGE value="update standard library" />
+    <MESSAGE value="update test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="update test case" />
   </component>
   <component name="hg4idea.settings">
     <option name="RECENT_HG_ROOT_PATH" value="$PROJECT_DIR$/rust/src/tools/cargo/tests/testsuite/cargo_init/mercurial_autodetect/in" />

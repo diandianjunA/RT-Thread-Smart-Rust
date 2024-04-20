@@ -1815,6 +1815,7 @@ pub const SO_TYPE: ::c_int = 0x1008;
 pub const SO_PROTOTYPE: ::c_int = 0x1009;
 pub const SO_DOMAIN: ::c_int = 0x100c;
 pub const SO_TIMESTAMP: ::c_int = 0x1013;
+pub const SO_EXCLBIND: ::c_int = 0x1015;
 
 pub const SCM_RIGHTS: ::c_int = 0x1010;
 pub const SCM_UCRED: ::c_int = 0x1012;
@@ -2944,7 +2945,7 @@ extern "C" {
 
     // The epoll functions are actually only present on illumos.  However,
     // there are things using epoll on illumos (built using the
-    // x86_64-pc-solaris targets) which would break until the illumos targets is
+    // x86_64-pc-solaris target) which would break until the illumos target is
     // present in rustc.
     pub fn epoll_pwait(
         epfd: ::c_int,

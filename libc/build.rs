@@ -16,7 +16,6 @@ const ALLOWED_CFGS: &'static [&'static str] = &[
     "libc_const_extern_fn",
     "libc_const_extern_fn_unstable",
     "libc_deny_warnings",
-    "libc_thread_local",
 ];
 
 // Extra values to allow for check-cfg.
@@ -30,6 +29,15 @@ const CHECK_CFG_EXTRA: &'static [(&'static str, &'static [&'static str])] = &[
 ];
 
 fn main() {
+    println!("cargo:rustc-link-lib=static=util");
+    println!("cargo:rustc-link-lib=static=rt");
+    println!("cargo:rustc-link-lib=static=pthread");
+    println!("cargo:rustc-link-lib=static=m");
+    println!("cargo:rustc-link-lib=static=dl");
+    println!("cargo:rustc-link-lib=static=c");
+    println!("cargo:rustc-link-lib=static=rtthread");
+    println!("cargo:rustc-link-lib=static=gcc_eh");
+    println!("cargo:rustc-link-lib=static=gcc");
     println!("cargo:rustc-link-search=/opt/aarch64-smart-musleabi/aarch64-linux-musleabi/lib");
     // Avoid unnecessary re-building.
     println!("cargo:rerun-if-changed=build.rs");
@@ -64,11 +72,6 @@ fn main() {
     // On CI: deny all warnings
     if libc_ci {
         set_cfg("libc_deny_warnings");
-    }
-
-    // #[thread_local] is currently unstable
-    if rustc_dep_of_std {
-        set_cfg("libc_thread_local");
     }
 
     // Rust >= 1.62.0 allows to use `const_extern_fn` for "Rust" and "C".

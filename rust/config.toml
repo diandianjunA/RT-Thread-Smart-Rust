@@ -16,7 +16,7 @@
 # Use different pre-set defaults than the global defaults.
 #
 # See `src/bootstrap/defaults` for more information.
-# Note that this has no default value (x.py uses the defaults in `config.example.toml`).
+# Note that this has no default value (x.py uses the defaults in `config.examples.toml`).
 #profile = <none>
 
 # Keeps track of major changes made to this configuration.
@@ -191,7 +191,7 @@
 # Otherwise, `x.py` will try to infer it from the output of `uname`.
 # If `uname` is not found in PATH, we assume this is `x86_64-pc-windows-msvc`.
 # This may be changed in the future.
-#build = "x86_64-unknown-linux-gnu" (as an example)
+#build = "x86_64-unknown-linux-gnu" (as an examples)
 
 # Which triples to produce a compiler toolchain for. Each of these triples will be bootstrapped from
 # the build triple themselves. In other words, this is the list of triples for which to build a
@@ -307,7 +307,7 @@
 # Enable a build of the extended Rust tool set which is not only the compiler
 # but also tools such as Cargo. This will also produce "combined installers"
 # which are used to install Rust and Cargo together.
-# The `tools` (check `config.example.toml` to see its default value) option specifies
+# The `tools` (check `config.examples.toml` to see its default value) option specifies
 # which tools should be built if `extended = true`.
 #
 # This is disabled by default.
@@ -587,7 +587,7 @@ datadir = "share"
 # The Rust compiler will differentiate between versions of itself, including
 # based on this string, which means that if you wish to be compatible with
 # upstream Rust you need to set this to "". However, note that if you are not
-# actually compatible -- for example if you've backported patches that change
+# actually compatible -- for examples if you've backported patches that change
 # behavior -- this may lead to miscompilations or other bugs.
 #description = ""
 
@@ -602,7 +602,7 @@ datadir = "share"
 # By default the `rustc` executable is built with `-Wl,-rpath` flags on Unix
 # platforms to ensure that the compiler is usable by default from the build
 # directory (as it links to a number of dynamic libraries). This may not be
-# desired in distributions, for example.
+# desired in distributions, for examples.
 #rpath = true
 
 # Indicates whether symbols should be stripped using `-Cstrip=symbols`.

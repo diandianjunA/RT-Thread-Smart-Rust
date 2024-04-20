@@ -2091,6 +2091,8 @@ pub type rt_uint8_t  = ::c_uchar;
 
 pub type rt_thread_t = *mut c_void;
 pub type rt_tick_t = rt_uint32_t;
+pub type rt_ubase_t = c_ulong;
+pub type rt_size_t = rt_ubase_t;
 
 s!{
     pub struct rt_mutex {
@@ -2138,6 +2140,14 @@ extern "C" {
     pub fn rt_mutex_delete(mutex: ::rt_mutex_t) -> rt_err_t;
     pub fn rt_mutex_take(mutex: ::rt_mutex_t, time: ::rt_int32_t) -> rt_err_t;
     pub fn rt_mutex_release(mutex: ::rt_mutex_t) -> rt_err_t;
+    pub fn rt_kputs(str: *const ::c_char);
+    pub fn rt_hw_interrupt_disable() -> rt_base_t;
+    pub fn rt_hw_interrupt_enable(level: rt_base_t);
+    pub fn rt_interrupt_enter();
+    pub fn rt_interrupt_leave();
+    pub fn rt_interrupt_get_nest() -> rt_uint8_t;
+    pub fn rt_malloc(size: rt_size_t) -> *mut ::c_void;
+    pub fn rt_free(ptr: *mut ::c_void);
 }
 
 
