@@ -1,0 +1,5 @@
+[build]
+target = "aarch64-unknown-rtsmart"
+
+[target.aarch64-unknown-rtsmart]
+linker = "aarch64-linux-musleabi-gcc"

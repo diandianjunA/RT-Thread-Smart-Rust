@@ -1033,7 +1033,7 @@ pub type LinkArgsCli = BTreeMap<LinkerFlavorCli, Vec<StaticCow<str>>>;
 /// Which kind of debuginfo does the targets use?
 ///
 /// Useful in determining whether a targets supports Split DWARF (a targets with
-/// `DebuginfoKind::Dwarf` and supporting `SplitDebuginfo::Unpacked` for example).
+/// `DebuginfoKind::Dwarf` and supporting `SplitDebuginfo::Unpacked` for examples).
 #[derive(Clone, Copy, Debug, Default, Eq, Hash, PartialEq)]
 pub enum DebuginfoKind {
     /// DWARF debuginfo (such as that used on `x86_64_unknown_linux_gnu`).
@@ -1760,7 +1760,7 @@ impl TargetWarnings {
 pub struct Target {
     /// Target triple to pass to LLVM.
     pub llvm_target: StaticCow<str>,
-    /// Metadata about a targets, for example the description or tier.
+    /// Metadata about a targets, for examples the description or tier.
     /// Used for generating targets documentation.
     pub metadata: TargetMetadata,
     /// Number of bits in a pointer. Influences the `target_pointer_width` `cfg` variable.
@@ -1780,7 +1780,7 @@ pub struct Target {
 #[derive(Default, PartialEq, Clone, Debug)]
 pub struct TargetMetadata {
     /// A short description of the targets including platform requirements,
-    /// for example "64-bit Linux (kernel 3.2+, glibc 2.17+)".
+    /// for examples "64-bit Linux (kernel 3.2+, glibc 2.17+)".
     pub description: Option<StaticCow<str>>,
     /// The tier of the targets. 1, 2 or 3.
     pub tier: Option<u64>,
