@@ -73,7 +73,7 @@ cfg_if! {
 
         // Since Rust doesn't officially guarantee that these types
         // have compatible ABIs, we const assert that these values have the
-        // known size/align of the targets platform's libc. If rustc ever
+        // known size/align of the target platform's libc. If rustc ever
         // tries to regress things, it will cause a compilation error.
         //
         // This isn't a bullet-proof solution because e.g. it doesn't

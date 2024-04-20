@@ -1,0 +1,8 @@
+[package]
+name = "rtsmart-std"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = { path = "../libc" }
+cty = { version = "0.2.2", optional = true }
