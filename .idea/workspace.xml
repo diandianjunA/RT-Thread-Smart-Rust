@@ -17,17 +17,11 @@
     <cargoProject FILE="$PROJECT_DIR$/examples/example2/hello/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update thread, mutex, stdin, fs module">
-      <change afterPath="$PROJECT_DIR$/img/file_test1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/file_test2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/file_test3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/file_test4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/mutex_test1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/mutex_test2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/read_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/thread_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/开发文档.md" afterDir="false" />
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update develop document">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mutex_test1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/mutex_test1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mutex_test2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/开发文档.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +150,7 @@
       <workItem from="1716533628826" duration="43000" />
       <workItem from="1716536063144" duration="108000" />
       <workItem from="1716540278919" duration="1571000" />
-      <workItem from="1716546857819" duration="327000" />
+      <workItem from="1716546857819" duration="1722000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -262,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716540465047</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update develop document">
+      <option name="closed" value="true" />
+      <created>1716547331510</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716547331510</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +293,8 @@
     <MESSAGE value="update test case" />
     <MESSAGE value="update work log" />
     <MESSAGE value="update thread, mutex, stdin, fs module" />
-    <option name="LAST_COMMIT_MESSAGE" value="update thread, mutex, stdin, fs module" />
+    <MESSAGE value="update develop document" />
+    <option name="LAST_COMMIT_MESSAGE" value="update develop document" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
