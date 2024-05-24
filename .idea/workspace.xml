@@ -17,43 +17,17 @@
     <cargoProject FILE="$PROJECT_DIR$/examples/example2/hello/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update work log">
-      <change afterPath="$PROJECT_DIR$/examples/example2/hello/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example2/hello/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example3/thread_test/.cargo/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example4/mutex_test/.cargo/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example4/mutex_test/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example5/read_test/.cargo/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example5/read_test/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example5/read_test/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example5/read_test/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example5/read_test/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example5/read_test/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rtsmart-std/src/api/thread.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rtsmart-std/src/fs.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rtsmart-std/src/mutex.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rtsmart-std/src/stdin.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rtsmart-std/src/thread.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rtsmart-std/src/time.rs" afterDir="false" />
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update thread, mutex, stdin, fs module">
+      <change afterPath="$PROJECT_DIR$/img/file_test1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/file_test2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/file_test3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/file_test4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mutex_test1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mutex_test2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/read_test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/thread_test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/开发文档.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example2/hello/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example2/hello/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example2/hello/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example2/hello/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libc/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/libc/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libc/build.rs" beforeDir="false" afterPath="$PROJECT_DIR$/libc/build.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marco_main/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/marco_main/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marco_main/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/marco_main/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/api/interrupt.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/api/mem.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/api/mem.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/api/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/api/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/malloc.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/malloc.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/out.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/stdout.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/prelude/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/prelude/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/markdown/2024.04.15-2024.04.21-work-log.md" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/markdown/2024.04.15-2024.04.21-work-log.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +77,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/diandianjun/os-educg/project2210132-226009&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/diandianjun/os-educg/project2210132-226009/examples/example3/thread_test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -118,11 +92,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/example3/thread_test" />
       <recent name="$PROJECT_DIR$/examples/example2/hello" />
       <recent name="$PROJECT_DIR$/examples/example2" />
       <recent name="$PROJECT_DIR$/rust" />
       <recent name="$PROJECT_DIR$/rust/library/std" />
-      <recent name="$PROJECT_DIR$/rust/library/std/src/sys/pal/unix" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/examples/example1" />
@@ -181,6 +155,8 @@
       <workItem from="1716474203934" duration="11000" />
       <workItem from="1716533628826" duration="43000" />
       <workItem from="1716536063144" duration="108000" />
+      <workItem from="1716540278919" duration="1571000" />
+      <workItem from="1716546857819" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -278,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713634543312</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update thread, mutex, stdin, fs module">
+      <option name="closed" value="true" />
+      <created>1716540465047</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716540465047</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +290,8 @@
     <MESSAGE value="update standard library" />
     <MESSAGE value="update test case" />
     <MESSAGE value="update work log" />
-    <option name="LAST_COMMIT_MESSAGE" value="update work log" />
+    <MESSAGE value="update thread, mutex, stdin, fs module" />
+    <option name="LAST_COMMIT_MESSAGE" value="update thread, mutex, stdin, fs module" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
