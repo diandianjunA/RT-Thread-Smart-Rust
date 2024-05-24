@@ -29,6 +29,7 @@ const CHECK_CFG_EXTRA: &'static [(&'static str, &'static [&'static str])] = &[
 ];
 
 fn main() {
+    println!("cargo:rustc-link-search=/opt/aarch64-smart-musleabi/aarch64-linux-musleabi/lib");
     println!("cargo:rustc-link-lib=static=util");
     println!("cargo:rustc-link-lib=static=rt");
     println!("cargo:rustc-link-lib=static=pthread");
@@ -38,7 +39,6 @@ fn main() {
     println!("cargo:rustc-link-lib=static=rtthread");
     println!("cargo:rustc-link-lib=static=gcc_eh");
     println!("cargo:rustc-link-lib=static=gcc");
-    println!("cargo:rustc-link-search=/opt/aarch64-smart-musleabi/aarch64-linux-musleabi/lib");
     // Avoid unnecessary re-building.
     println!("cargo:rerun-if-changed=build.rs");
 

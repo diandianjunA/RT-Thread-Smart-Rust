@@ -65,7 +65,7 @@ pub fn marco_main_use(args: TokenStream, input: TokenStream) -> TokenStream {
         #[no_mangle]
         pub extern "C" fn main(_argc: isize, _argv: *const *const u8) -> usize {
             #content
-            0
+            return 0;
         }
     );
 

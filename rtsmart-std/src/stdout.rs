@@ -25,7 +25,7 @@ pub fn _print(args: fmt::Arguments) {
 #[macro_export]
 macro_rules! print {
     ($($arg:tt)*) => ({
-        $crate::out::_print(format_args!($($arg)*));
+        $crate::stdout::_print(format_args!($($arg)*));
     });
 }
 
@@ -33,7 +33,7 @@ macro_rules! print {
 #[allow_internal_unstable(print_internals, format_args_nl)]
 macro_rules! println {
     ($($arg:tt)*) => ({
-        $crate::out::_print(format_args_nl!($($arg)*));
+        $crate::stdout::_print(format_args_nl!($($arg)*));
     });
 }
 
@@ -46,7 +46,7 @@ pub use core::stringify;
 macro_rules! dlog {
     ($($arg:tt)*) => ({
         $crate::println!("[$DBG][{}:{}] {}",
-        $crate::out::file!(), $crate::out::line!(), format_args!($($arg)*));
+        $crate::stdout::file!(), $crate::stdout::line!(), format_args!($($arg)*));
     });
 }
 
@@ -54,7 +54,7 @@ macro_rules! dlog {
 macro_rules! log {
     ($($arg:tt)*) => ({
         $crate::println!("[$LOG][{}:{}] {}",
-        $crate::out::file!(), $crate::out::line!(), format_args!($($arg)*));
+        $crate::stdout::file!(), $crate::stdout::line!(), format_args!($($arg)*));
     });
 }
 
@@ -62,13 +62,13 @@ macro_rules! log {
 #[macro_export]
 macro_rules! dbg {
     () => {
-        $crate::println!("[{}:{}]", $crate::out::file!(), $crate::out::line!());
+        $crate::println!("[{}:{}]", $crate::stdout::file!(), $crate::stdout::line!());
     };
     ($val:expr $(,)?) => {
         match $val {
             tmp => {
                 $crate::println!("[{}:{}] {} = {:#?}",
-                $crate::out::file!(), $crate::out::line!(), $crate::out::stringify!($val), &tmp);
+                $crate::stdout::file!(), $crate::stdout::line!(), $crate::stdout::stringify!($val), &tmp);
             }
         }
     };

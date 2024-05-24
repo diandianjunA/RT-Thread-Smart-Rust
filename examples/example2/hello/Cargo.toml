@@ -5,5 +5,5 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
-marco_main = {path = "../marco_main"}
-rtsmart-std = { path = "../rtsmart-std" }
+marco_main = {path = "../../../marco_main"}
+rtsmart-std = { path = "../../../rtsmart-std" }

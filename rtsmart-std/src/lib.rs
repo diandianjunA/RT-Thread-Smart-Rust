@@ -8,15 +8,19 @@
 #[global_allocator]
 static GLOBAL: malloc::RttAlloc = malloc::RttAlloc;
 
-mod api;
+pub mod api;
 
 pub extern crate alloc;
-pub mod out;
+pub mod stdout;
 pub mod puts;
 pub mod prelude;
 pub mod malloc;
+pub mod time;
+pub mod thread;
+pub mod mutex;
+pub mod stdin;
+pub mod fs;
 
-// TODO: review this enum
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum RTTError {
     ThreadStartupErr,
@@ -37,14 +41,6 @@ pub enum RTTError {
     DeviceSetTxCallBackFailed,
 
     FuncUnDefine,
-}
-
-fn panic_on_atomic_context(s: &str) {
-    use crate::api::interrupt::is_irq_context;
-    use core::intrinsics::unlikely;
-    if unlikely(is_irq_context()) {
-        panic!("In irq context {}", s);
-    }
 }
 
 pub type RTResult<T> = Result<T, RTTError>;
