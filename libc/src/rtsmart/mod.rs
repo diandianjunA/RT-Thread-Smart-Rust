@@ -982,6 +982,8 @@ pub const _PARM_PATH_MAX: ::c_int = 1024;
 pub const WNOHANG: ::c_int = 0x01;
 pub const WUNTRACED: ::c_int = 0x02;
 
+pub const PTHREAD_CREATE_DETACHED: ::c_int= 1;
+
 const PTHREAD_MUTEXATTR_INITIALIZER: pthread_mutexattr_t =
     pthread_mutexattr_t {
         mutexAttrStatus: PTHREAD_INITIALIZED_OBJ,
@@ -1045,7 +1047,7 @@ pub const _SC_PAGESIZE: ::c_int = 39;
 pub const O_ACCMODE: ::c_int = 3;
 pub const O_CLOEXEC: ::c_int = 0x100000; // fcntlcom
 pub const O_EXCL: ::c_int = 0x0800;
-pub const O_CREAT: ::c_int = 0x0200;
+pub const O_CREAT: ::c_int = 0o100;
 pub const O_TRUNC: ::c_int = 0x0400;
 pub const O_APPEND: ::c_int = 0x0008;
 pub const O_RDWR: ::c_int = 0x0002;
@@ -2128,7 +2130,7 @@ extern "C" {
 
 
     pub fn rt_mutex_create(
-        name: *mut ::c_char,
+        name: *const ::c_char,
         flag: ::rt_uint8_t
     ) -> ::rt_mutex_t;
 
@@ -2140,16 +2142,37 @@ extern "C" {
     pub fn rt_mutex_delete(mutex: ::rt_mutex_t) -> rt_err_t;
     pub fn rt_mutex_take(mutex: ::rt_mutex_t, time: ::rt_int32_t) -> rt_err_t;
     pub fn rt_mutex_release(mutex: ::rt_mutex_t) -> rt_err_t;
-    pub fn rt_kputs(str: *const ::c_char);
     pub fn rt_hw_interrupt_disable() -> rt_base_t;
     pub fn rt_hw_interrupt_enable(level: rt_base_t);
     pub fn rt_interrupt_enter();
     pub fn rt_interrupt_leave();
     pub fn rt_interrupt_get_nest() -> rt_uint8_t;
+
+    pub fn pthread_setname_np(pthread_t: pthread_t, name: *const ::c_char) -> ::c_int;
+
     pub fn rt_malloc(size: rt_size_t) -> *mut ::c_void;
     pub fn rt_free(ptr: *mut ::c_void);
 }
 
+pub const RT_EOK: ::c_int = 0;
+pub const RT_ERROR: ::c_int = 1;
+pub const RT_ETIMEOUT: ::c_int = 2;
+pub const RT_EFULL: ::c_int = 3;
+pub const RT_EEMPTY: ::c_int = 4;
+pub const RT_ENOMEM: ::c_int = 5;
+pub const RT_ENOSYS: ::c_int = 6;
+pub const RT_EBUSY: ::c_int = 7;
+pub const RT_EIO: ::c_int = 8;
+pub const RT_EINTR: ::c_int = 9;
+pub const RT_EINVAL: ::c_int = 10;
+pub const RT_ENOENT: ::c_int = 11;
+pub const RT_ENOSPC: ::c_int = 12;
+pub const RT_EPERM: ::c_int = 13;
+pub const RT_ETRAP: ::c_int = 14;
+pub const RT_EFAULT: ::c_int = 15;
+pub const RT_ENOBUFS: ::c_int = 16;
+pub const RT_ESCHEDISR: ::c_int = 17;
+pub const RT_ESCHEDLOCKED: ::c_int = 18;
 
 
 
@@ -2271,6 +2294,7 @@ cfg(target_feature = "crt-static"))]
 cfg(target_feature = "crt-static"))]
 #[link(name = "rtthread", kind = "static",
 cfg(target_feature = "crt-static"))]
+// #[link(name = "rtthread")]
 #[link(name = "gcc_eh", kind = "static",
 cfg(target_feature = "crt-static"))]
 #[link(name = "gcc", kind = "static",
@@ -2281,4 +2305,5 @@ cfg(target_feature = "crt-static"))]
 #[link(name = "m", cfg(not(target_feature = "crt-static")))]
 #[link(name = "dl", cfg(not(target_feature = "crt-static")))]
 #[link(name = "c", cfg(not(target_feature = "crt-static")))]
+#[link(name = "rtthread", cfg(not(target_feature = "crt-static")))]
 extern {}

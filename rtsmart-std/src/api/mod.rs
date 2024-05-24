@@ -1,2 +1,2 @@
-pub mod interrupt;
 pub mod mem;
+pub mod thread;

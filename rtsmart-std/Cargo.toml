@@ -5,4 +5,3 @@ edition = "2021"
 
 [dependencies]
 libc = { path = "../libc" }
-cty = { version = "0.2.2", optional = true }

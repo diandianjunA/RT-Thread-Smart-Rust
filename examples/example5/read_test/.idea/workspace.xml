@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6775b271-a8c3-445a-a9fa-a5724f86fb0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../example2/hello/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../example2/hello/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../example3/thread_test/.cargo/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/.cargo/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.cargo/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../example6/file_test/.cargo/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/api/thread.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/fs.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/mutex.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/stdin.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/thread.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/time.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../example2/hello/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../example2/hello/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../example2/hello/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example2/hello/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../libc/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../libc/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../libc/build.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../libc/build.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../libc/src/rtsmart/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../libc/src/rtsmart/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../marco_main/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../marco_main/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../marco_main/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../marco_main/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/api/interrupt.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/api/mem.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/api/mem.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/api/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/api/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/malloc.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/malloc.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/out.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/stdout.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/prelude/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/prelude/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.15-2024.04.21-work-log.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.15-2024.04.21-work-log.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="y0v8h52d" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2gu3WfuC2e9mSyjaH0E0Eo4QPgo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/diandianjun/os-educg/project2210132-226009/examples/example5/read_test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --package read_test --bin read_test" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6775b271-a8c3-445a-a9fa-a5724f86fb0b" name="Changes" comment="" />
+      <created>1716533668972</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716533668972</updated>
+      <workItem from="1716533670244" duration="761000" />
+      <workItem from="1716536221896" duration="44000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
