@@ -1,6 +1,7 @@
 use alloc::string::{String, ToString};
 use libc::{c_char, c_void, SEEK_SET};
-use crate::println;
+use crate::{println, RTResult};
+use crate::RTTError::{FileCloseErr, FileFlushErr, FileOpenErr, FileReadErr, FileSeekErr, FileSetLengthErr, FileSyncErr, FileWriteErr};
 
 pub struct File {
     pub fd: i32,
@@ -45,7 +46,7 @@ impl OpenOptions {
         self
     }
 
-    pub fn open(&mut self, path: &str) -> Result<File, String> {
+    pub fn open(&mut self, path: &str) -> RTResult<File> {
         self.path = path.to_string();
         let fd = unsafe {
             crate::fs::open(
@@ -57,7 +58,7 @@ impl OpenOptions {
             )
         };
         if fd < 0 {
-            Err("open file failed".to_string())
+            Err(FileOpenErr)
         } else {
             Ok(File { fd })
         }
@@ -96,7 +97,7 @@ impl Drop for File {
 }
 
 impl File {
-    pub fn read_to_string(&self) -> Result<String, String> {
+    pub fn read_to_string(&self) -> RTResult<String> {
         let mut buf = [0; 128];
         let mut string = String::new();
         self.seek(0)?;
@@ -111,69 +112,69 @@ impl File {
         Ok(string)
     }
     
-    pub fn write_all(&self, buf: &str) -> Result<(), String> {
+    pub fn write_all(&self, buf: &str) -> RTResult<()> {
         self.write(buf.as_bytes())?;
         Ok(())
     }
     
-    pub fn read(&self, buf: &mut [u8]) -> Result<usize, String> {
+    pub fn read(&self, buf: &mut [u8]) -> RTResult<usize> {
         let n = unsafe { libc::read(self.fd, buf.as_mut_ptr() as *mut c_void, buf.len()) };
         if n < 0 {
-            Err("read file failed".to_string())
+            Err(FileReadErr)
         } else {
             Ok(n as usize)
         }
     }
 
-    pub fn write(&self, buf: &[u8]) -> Result<usize, String> {
+    pub fn write(&self, buf: &[u8]) -> RTResult<usize> {
         let n = unsafe { libc::write(self.fd, buf.as_ptr() as *const c_void, buf.len()) };
         if n < 0 {
-            Err("write file failed".to_string())
+            Err(FileWriteErr)
         } else {
             Ok(n as usize)
         }
     }
 
-    pub fn seek(&self, offset: i64) -> Result<i64, String> {
+    pub fn seek(&self, offset: i64) -> RTResult<i64> {
         let n = unsafe { libc::lseek(self.fd, offset, SEEK_SET) };
         if n < 0 {
-            Err("seek file failed".to_string())
+            Err(FileSeekErr)
         } else {
             Ok(n)
         }
     }
     
-    pub fn flush(&self) -> Result<(), String> {
+    pub fn flush(&self) -> RTResult<()> {
         let n = unsafe { libc::fsync(self.fd) };
         if n < 0 {
-            Err("flush file failed".to_string())
+            Err(FileFlushErr)
         } else {
             Ok(())
         }
     }
     
-    pub fn set_len(&self, len: i64) -> Result<(), String> {
+    pub fn set_len(&self, len: i64) -> RTResult<()> {
         let n = unsafe { libc::ftruncate(self.fd, len) };
         if n < 0 {
-            Err("set_len file failed".to_string())
+            Err(FileSetLengthErr)
         } else {
             Ok(())
         }
     }
     
-    pub fn sync_all(&self) -> Result<(), String> {
+    pub fn sync_all(&self) -> RTResult<()> {
         let n = unsafe { libc::fsync(self.fd) };
         if n < 0 {
-            Err("sync_all file failed".to_string())
+            Err(FileSyncErr)
         } else {
             Ok(())
         }
     }
     
-    pub fn close(&self) -> Result<(), String> {
+    pub fn close(&self) -> RTResult<()> {
         let n = unsafe { libc::close(self.fd) };
         if n < 0 {
-            Err("close file failed".to_string())
+            Err(FileCloseErr)
         } else {
             Ok(())
         }

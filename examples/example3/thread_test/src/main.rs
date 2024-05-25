@@ -9,7 +9,7 @@ use marco_main::marco_main_use;
 use rtsmart_std::{println, time};
 use rtsmart_std::thread::Thread;
 
-#[marco_main_use(appname = "rust_thread_test", desc = "Rust example5 app.")]
+#[marco_main_use(appname = "rust_thread_test", desc = "Rust example3 app.")]
 fn main(_param: Param) {
     println!("Hello world");
     let run1 = || loop {

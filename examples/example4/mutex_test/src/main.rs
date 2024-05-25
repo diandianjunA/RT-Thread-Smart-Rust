@@ -11,7 +11,7 @@ use marco_main::marco_main_use;
 use rtsmart_std::{println, thread, time};
 use rtsmart_std::mutex::Mutex;
 
-#[marco_main_use(appname = "rust_mutex_test", desc = "Rust example5 app.")]
+#[marco_main_use(appname = "rust_mutex_test", desc = "Rust example4 app.")]
 fn main(_param: Param) {
     let counter = Arc::new(Mutex::new(0).unwrap());
     let run = move || loop {

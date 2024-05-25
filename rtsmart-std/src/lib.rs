@@ -25,22 +25,22 @@ pub mod fs;
 pub enum RTTError {
     ThreadStartupErr,
     MutexTakeTimeout,
-    SemaphoreTakeTimeout,
-    QueueSendTimeout,
-    QueueReceiveTimeout,
-    OutOfMemory,
-
-    DeviceNotFound,
-    DeviceOpenFailed,
-    DeviceCloseFailed,
-    DeviceReadFailed,
-    DeviceWriteFailed,
-    DeviceTransFailed,
-    DeviceConfigFailed,
-    DeviceSetRxCallBackFailed,
-    DeviceSetTxCallBackFailed,
-
-    FuncUnDefine,
+    ThreadCreateErr,
+    ThreadDeleteErr,
+    MutexCreateErr,
+    MutexTakeErr,
+    MutexReleaseErr,
+    MutexDeleteErr,
+    FileOpenErr,
+    FileCloseErr,
+    FileReadErr,
+    FileWriteErr,
+    FileSeekErr,
+    FileFlushErr,
+    FileDeleteErr,
+    FileSetLengthErr,
+    FileSyncErr,
+    OutOfMemory
 }
 
 pub type RTResult<T> = Result<T, RTTError>;
