@@ -1,8 +1,11 @@
 use alloc::boxed::Box;
 use alloc::string::String;
 use core::mem;
-use libc::{exit, pthread_t, rt_thread_t};
-use crate::{println, RTResult, RTTError};
+
+use libc::{c_void, rt_thread_t};
+
+use crate::{RTResult, RTTError};
+use crate::api::thread::{thread_create, thread_delete, thread_startup};
 use crate::RTTError::ThreadStartupErr;
 
 pub struct ThreadBuilder {
@@ -48,7 +51,7 @@ impl ThreadBuilder {
     }
 }
 
-pub struct Thread(pthread_t);
+pub struct Thread(rt_thread_t);
 
 impl Thread {
     pub fn new() -> ThreadBuilder {
@@ -80,45 +83,52 @@ impl Thread {
         ticks: u32,
         func: Box<dyn FnOnce() -> () + Send + 'static>,
     ) -> RTResult<Thread> {
-        let name = name.as_ptr() as *const i8;
         let func = Box::new(func);
         let param = &*func as *const _ as *mut _;
-        extern "C" fn thread_func(func: *mut libc::c_void) -> *mut libc::c_void {
+
+        extern "C" fn thread_func(param: *mut c_void) {
             unsafe {
-                let func = Box::from_raw(func as *mut Box<dyn FnOnce()>);
-                func();
-                Thread::thread_exit()
+                let run = Box::from_raw(param as *mut Box<dyn FnOnce()>);
+                run();
             }
         }
-        let mut thread = pthread_t::default();
-        let attr = core::ptr::null();
-        let ret = crate::api::thread::thread_create(
-            &mut thread,
-            attr,
+
+        let th_handle = thread_create(
+            name.as_ref(),
             thread_func,
             param,
-        );
-        if ret != 0 {
-            return Err(ThreadStartupErr);
-        }
-        mem::forget(func);
-        Ok(Thread(thread))
-    }
+            stack_size,
+            priority,
+            ticks,
+        )
+            .ok_or(RTTError::OutOfMemory)?;
 
-    pub fn join(self) {
-        let ptr = Box::new(Box::new(0u64));
-        let ptr = Box::into_raw(ptr) as *mut _;
-        let ret = unsafe {
-            crate::api::thread::thread_join(self.0, ptr)
+        let ret = match Self::_startup(th_handle) {
+            Ok(_) => {
+                mem::forget(func);
+                Ok(Thread(th_handle))
+            }
+            Err(e) => Err(e),
         };
-        if ret != 0 {
-            println!("thread join failed: {}", ret);
-        }
-    }
 
-    pub fn thread_exit() -> ! {
-        let a = Box::new(0u64);
-        let a = Box::into_raw(a) as *mut _;
-        crate::api::thread::thread_exit(a)
+        return ret;
+    }
+    
+    fn _startup(th: rt_thread_t) -> Result<(), RTTError> {
+        let ret = thread_startup(th);
+        return if ret == 0 {
+            Ok(())
+        } else {
+            Err(ThreadStartupErr)
+        };
+    }
+    
+    pub fn delete(&self) -> RTResult<()> {
+        let ret = thread_delete(self.0);
+        if ret == 0 {
+            Ok(())
+        } else {
+            Err(ThreadStartupErr)
+        }
     }
 }
