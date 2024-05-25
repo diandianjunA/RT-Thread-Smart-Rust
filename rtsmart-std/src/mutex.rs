@@ -1,18 +1,22 @@
 use core::cell::UnsafeCell;
 use core::ops::{Deref, DerefMut};
-use libc::pthread_mutex_t;
+
+use libc::rt_mutex_t;
+
+use crate::api::mutex::{mutex_create, mutex_delete, mutex_take};
+use crate::RTTError;
 
 unsafe impl<T: Send> Send for Mutex<T> {}
 unsafe impl<T: Send> Sync for Mutex<T> {}
 
 
 pub struct Mutex<T: Sized> {
-    mutex: pthread_mutex_t,
+    mutex: rt_mutex_t,
     data: UnsafeCell<T>,
 }
 
 pub struct MutexGuard<'a, T: Sized> {
-    mutex: &'a pthread_mutex_t,
+    mutex: &'a rt_mutex_t,
     data: &'a UnsafeCell<T>,
 }
 
@@ -27,9 +31,7 @@ impl <'a, T> Deref for MutexGuard<'a, T> {
 impl <'a, T> Drop for MutexGuard<'a, T> {
     fn drop(&mut self) {
         let mutex = self.mutex as *const _ as *mut _;
-        unsafe {
-            libc::pthread_mutex_unlock(mutex);
-        }
+        mutex_delete(mutex);
     }
 }
 
@@ -40,28 +42,39 @@ impl <'a, T> DerefMut for MutexGuard<'a, T> {
 }
 
 impl<T> Mutex<T> {
-    pub fn new(t: T) -> Self {
-        Self {
-            mutex: unsafe { core::mem::zeroed() },
+    pub fn new(t: T) -> Result<Self, RTTError> {
+        Ok(Mutex {
+            mutex: mutex_create("Unnamed").unwrap(),
             data: UnsafeCell::new(t),
-        }
-    }
-
-    pub fn lock(&self) -> MutexGuard<T> {
-        let ptr = &self.mutex as *const _ as *mut _;
-        unsafe {
-            libc::pthread_mutex_lock(ptr);
-        }
-        MutexGuard {
-            mutex: &self.mutex,
-            data: &self.data,
-        }
+        })
     }
     
-    pub fn unlock(&self) {
-        let ptr = &self.mutex as *const _ as *mut _;
-        unsafe {
-            libc::pthread_mutex_unlock(ptr);
+    pub fn new_with_name(t: T, name: &str) -> Result<Self, RTTError> {
+        Ok(Mutex {
+            mutex: mutex_create(name).unwrap(),
+            data: UnsafeCell::new(t),
+        })
+    }
+
+    pub fn try_lock(&self) -> Result<MutexGuard<T>, RTTError> {
+        let ret = unsafe { mutex_take(self.mutex, 0) };
+        if ret != 0 {
+            return Err(RTTError::MutexTakeTimeout);
         }
+        Ok(MutexGuard {
+            mutex: &self.mutex,
+            data: &self.data,
+        })
+    }
+    
+    pub fn lock(&self) -> Result<MutexGuard<T>, RTTError> {
+        let ret = unsafe { mutex_take(self.mutex, -1) };
+        if ret != 0 {
+            return Err(RTTError::MutexTakeTimeout);
+        }
+        Ok(MutexGuard {
+            mutex: &self.mutex,
+            data: &self.data,
+        })
     }
 }

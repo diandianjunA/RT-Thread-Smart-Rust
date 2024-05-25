@@ -1,15 +1,16 @@
 use alloc::string::String;
 use core::fmt::Error;
 use crate::mutex::Mutex;
+use crate::RTTError;
 
 struct Stdin;
 
 pub trait Read {
-    fn read(&mut self, buf: &mut [u8]) -> Result<usize, Error>;
+    fn read(&mut self, buf: &mut [u8]) -> Result<usize, RTTError>;
 }
 
 impl Read for Stdin {
-    fn read(&mut self, buf: &mut [u8]) -> Result<usize, Error> {
+    fn read(&mut self, buf: &mut [u8]) -> Result<usize, RTTError> {
         let mut i = 0;
         unsafe {
             while i < buf.len() {
@@ -26,20 +27,19 @@ impl Read for Stdin {
 }
 
 pub struct InputStream {
-    stdin: Mutex<Stdin>
+    stdin: Stdin
 }
 
 impl InputStream {
     pub fn new() -> InputStream {
         InputStream {
-            stdin: Mutex::new(Stdin)
+            stdin: Stdin
         }
     }
     
-    pub fn read_line(&mut self) -> Result<String, Error> {
-        let mut _lock = self.stdin.lock();
+    pub fn read_line(&mut self) -> Result<String, RTTError> {
         let mut buf = [0; 128];
-        let n = _lock.read(&mut buf)?;
+        let n = self.stdin.read(&mut buf)?;
         let string = unsafe { String::from_utf8_unchecked(buf.to_vec()) };
         Ok(string)
     }

@@ -12,34 +12,35 @@ use rtsmart_std::thread::Thread;
 #[marco_main_use(appname = "rust_thread_test", desc = "Rust example5 app.")]
 fn main(_param: Param) {
     println!("Hello world");
-    let run1 = Box::new(|| {
+    let run1 = || loop {
+        time::sleep(Duration::new(1, 0));
         let mut sum = 0;
         for i in 0..10 {
             sum += i;
         }
         println!("thread1: {}", sum);
-    });
-    let run2 = Box::new(|| {
+    };
+    let run2 = || loop {
+        time::sleep(Duration::new(1, 0));
         let mut sum = 0;
         for i in 0..10 {
             sum += i;
         }
         println!("thread2: {}", sum);
-    });
+    };
 
     let t1 = Thread::new()
         .name("thread 1")
-        .stack_size(1024)
+        .stack_size(4096)
         .start(run1.clone());
-    if t1.is_ok() {
-        println!("thread 1 started")
-    } else {
-        println!("thread 1 start failed")
-    }
     let t2 = Thread::new()
         .name("thread 2")
-        .stack_size(1024)
+        .stack_size(4096)
         .start(run2.clone());
-    t1.unwrap().join();
-    t2.unwrap().join();
+    let thread1 = t1.unwrap();
+    let thread2 = t2.unwrap();
+    time::sleep(Duration::new(5, 0));
+    thread1.delete().unwrap();
+    thread2.delete().unwrap();
+    println!("Thread1 and Thread2 are deleted");
 }
