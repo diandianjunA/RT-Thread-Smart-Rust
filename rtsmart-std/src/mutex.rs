@@ -3,7 +3,7 @@ use core::ops::{Deref, DerefMut};
 
 use libc::rt_mutex_t;
 
-use crate::api::mutex::{mutex_create, mutex_delete, mutex_take};
+use crate::api::mutex::{mutex_create, mutex_delete, mutex_release, mutex_take};
 use crate::RTTError;
 
 unsafe impl<T: Send> Send for Mutex<T> {}
@@ -20,6 +20,20 @@ pub struct MutexGuard<'a, T: Sized> {
     data: &'a UnsafeCell<T>,
 }
 
+impl <'a, T> MutexGuard<'a, T> {
+    pub fn new(mutex: &'a rt_mutex_t, data: &'a UnsafeCell<T>) -> Self {
+        MutexGuard {
+            mutex,
+            data,
+        }
+    }
+    
+    pub fn release(&self) {
+        let mutex = self.mutex as *const _ as *mut _;
+        mutex_release(mutex);
+    }
+}
+
 impl <'a, T> Deref for MutexGuard<'a, T> {
     type Target = T;
 
@@ -31,7 +45,7 @@ impl <'a, T> Deref for MutexGuard<'a, T> {
 impl <'a, T> Drop for MutexGuard<'a, T> {
     fn drop(&mut self) {
         let mutex = self.mutex as *const _ as *mut _;
-        mutex_delete(mutex);
+        mutex_release(mutex);
     }
 }
 
@@ -57,7 +71,7 @@ impl<T> Mutex<T> {
     }
 
     pub fn try_lock(&self) -> Result<MutexGuard<T>, RTTError> {
-        let ret = unsafe { mutex_take(self.mutex, 0) };
+        let ret = mutex_take(self.mutex, 0);
         if ret != 0 {
             return Err(RTTError::MutexTakeTimeout);
         }
@@ -68,7 +82,7 @@ impl<T> Mutex<T> {
     }
     
     pub fn lock(&self) -> Result<MutexGuard<T>, RTTError> {
-        let ret = unsafe { mutex_take(self.mutex, -1) };
+        let ret = mutex_take(self.mutex, -1);
         if ret != 0 {
             return Err(RTTError::MutexTakeTimeout);
         }
@@ -76,5 +90,10 @@ impl<T> Mutex<T> {
             mutex: &self.mutex,
             data: &self.data,
         })
+    }
+    
+    pub fn delete(&self) {
+        let mutex = self.mutex as *const _ as *mut _;
+        mutex_delete(mutex);
     }
 }
