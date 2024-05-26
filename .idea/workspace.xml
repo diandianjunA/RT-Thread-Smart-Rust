@@ -21,14 +21,7 @@
     <cargoProject FILE="$PROJECT_DIR$/examples/example6/file_test/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update development document">
-      <change afterPath="$PROJECT_DIR$/img/arch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/compile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/技术文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/技术文档.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.pdf" afterDir="false" />
-    </list>
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update development document and readme" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,7 +160,7 @@
       <workItem from="1716709574340" duration="480000" />
       <workItem from="1716713583382" duration="2114000" />
       <workItem from="1716717310723" duration="1018000" />
-      <workItem from="1716733093811" duration="1069000" />
+      <workItem from="1716733093811" duration="1451000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -345,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716717320100</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="update development document and readme">
+      <option name="closed" value="true" />
+      <created>1716734329538</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716734329538</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +382,8 @@
     <MESSAGE value="update Demo video" />
     <MESSAGE value="update development document and work-log" />
     <MESSAGE value="update development document" />
-    <option name="LAST_COMMIT_MESSAGE" value="update development document" />
+    <MESSAGE value="update development document and readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="update development document and readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
