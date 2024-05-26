@@ -8,7 +8,7 @@ use rtsmart_std::println;
 use rtsmart_std::stdin::InputStream;
 
 #[marco_main_use(appname = "rust_read_test", desc = "Rust example5 app.")]
-fn main(_param: Param) {
+fn main() {
     let mut input = InputStream::new();
     let line = input.read_line().unwrap();
     println!("{}", line);

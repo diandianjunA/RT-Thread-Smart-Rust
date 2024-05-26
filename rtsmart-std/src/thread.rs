@@ -5,7 +5,7 @@ use core::mem;
 use libc::{c_void, rt_thread_t};
 
 use crate::{RTResult, RTTError};
-use crate::api::thread::{thread_create, thread_delete, thread_startup};
+use crate::api::thread::{thread_create, thread_delete, thread_startup, thread_m_delay, thread_self};
 use crate::RTTError::ThreadStartupErr;
 
 pub struct ThreadBuilder {
@@ -114,7 +114,7 @@ impl Thread {
         return ret;
     }
     
-    fn _startup(th: rt_thread_t) -> Result<(), RTTError> {
+    fn _startup(th: rt_thread_t) -> RTResult<()> {
         let ret = thread_startup(th);
         return if ret == 0 {
             Ok(())
@@ -130,5 +130,22 @@ impl Thread {
         } else {
             Err(ThreadStartupErr)
         }
+    }
+    
+    pub fn delay(ms: i32) -> RTResult<()> {
+        let ret = thread_m_delay(ms);
+        if ret == 0 {
+            Ok(())
+        } else {
+            Err(ThreadStartupErr)
+        }
+    }
+    
+    pub fn self_() -> Option<Thread> {
+        thread_self().map(Thread)
+    }
+    
+    pub fn raw(&self) -> rt_thread_t {
+        self.0
     }
 }

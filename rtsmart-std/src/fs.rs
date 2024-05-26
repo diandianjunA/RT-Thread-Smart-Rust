@@ -162,15 +162,6 @@ impl File {
         }
     }
     
-    pub fn sync_all(&self) -> RTResult<()> {
-        let n = unsafe { libc::fsync(self.fd) };
-        if n < 0 {
-            Err(FileSyncErr)
-        } else {
-            Ok(())
-        }
-    }
-    
     pub fn close(&self) -> RTResult<()> {
         let n = unsafe { libc::close(self.fd) };
         if n < 0 {

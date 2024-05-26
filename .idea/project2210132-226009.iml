@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/examples/example1/hello/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example2/hello/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/marco_main/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rtsmart-std/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example3/thread_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example4/mutex_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example5/read_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example6/file_test/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example1/hello/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example2/hello/target" />
+      <excludeFolder url="file://$MODULE_DIR$/libc/target" />
+      <excludeFolder url="file://$MODULE_DIR$/marco_main/target" />
+      <excludeFolder url="file://$MODULE_DIR$/rtsmart-std/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example3/thread_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example4/mutex_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example5/read_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example6/file_test/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

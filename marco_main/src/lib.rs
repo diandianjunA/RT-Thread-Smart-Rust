@@ -44,7 +44,6 @@ pub fn marco_main_use(args: TokenStream, input: TokenStream) -> TokenStream {
         && f.sig.asyncness.is_none()
         && f.vis == Visibility::Inherited
         && f.sig.abi.is_none()
-        && f.sig.inputs.len() == 1
         && f.sig.generics.params.is_empty()
         && f.sig.generics.where_clause.is_none()
         && f.sig.variadic.is_none()
@@ -55,7 +54,7 @@ pub fn marco_main_use(args: TokenStream, input: TokenStream) -> TokenStream {
     if !valid_signature {
         return parse::Error::new(
             f.span(),
-            "`#[entry]` function must have signature `fn(arg: vec::IntoIter<&[u8]>)`",
+            "`#[entry]` function must have signature `fn()`",
         )
             .to_compile_error()
             .into();

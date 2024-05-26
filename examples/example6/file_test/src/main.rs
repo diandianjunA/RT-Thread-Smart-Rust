@@ -8,7 +8,7 @@ use marco_main::marco_main_use;
 use rtsmart_std::{fs, println};
 
 #[marco_main_use(appname = "rust_file_test", desc = "Rust example6 app.")]
-fn main(_param: Param) {
+fn main() {
     let mut res_file = fs::OpenOptions::new()
         .read(true)
         .write(true)

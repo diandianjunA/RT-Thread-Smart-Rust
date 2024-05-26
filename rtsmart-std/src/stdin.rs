@@ -38,10 +38,21 @@ impl InputStream {
     }
     
     pub fn read_line(&mut self) -> Result<String, RTTError> {
-        let mut buf = [0; 128];
-        let n = self.stdin.read(&mut buf)?;
-        let string = unsafe { String::from_utf8_unchecked(buf.to_vec()) };
-        Ok(string)
+        let mut buf = [0u8; 1024];
+        let mut s = String::new();
+        loop {
+            let n = self.stdin.read(&mut buf)?;
+            if n == 0 {
+                break;
+            }
+            s.push_str(&String::from_utf8_lossy(&buf[..n]));
+            if n < buf.len() {
+                break;
+            } else {
+                buf = [0u8; 1024];
+            }
+        }
+        Ok(s)
     }
 }
 
