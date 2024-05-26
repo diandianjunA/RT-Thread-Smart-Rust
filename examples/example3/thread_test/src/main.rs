@@ -3,8 +3,8 @@
 
 extern crate alloc;
 
-use alloc::boxed::Box;
 use core::time::Duration;
+
 use marco_main::marco_main_use;
 use rtsmart_std::{println, time};
 use rtsmart_std::thread::Thread;
