@@ -21,8 +21,25 @@
     <cargoProject FILE="$PROJECT_DIR$/examples/example6/file_test/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update work-log">
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update Demo video">
+      <change afterPath="$PROJECT_DIR$/img/stdout_compile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/stdout_test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/技术文档.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/example3/thread_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example3/thread_test/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/example5/read_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example5/read_test/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/example6/file_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example6/file_test/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/file_test1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/file_test1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/file_test2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/file_test2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/file_test3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/file_test3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/file_test4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mutex_test1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/read_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/thread_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/thread_test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/markdown/2024.04.15-2024.04.21-work-log.md" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/markdown/2024.04.15-2024.04.21-work-log.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/pdf/2024.04.08-2024.04.14-work-log.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/pdf/2024.04.08-2024.04.14-work-log.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/pdf/2024.04.15-2024.04.21-work-log.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/pdf/2024.04.15-2024.04.21-work-log.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/技术文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +59,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="ep6wzz28" />
@@ -61,30 +77,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/diandianjun/os-educg/project2210132-226009/examples/example6/file_test/Cargo.toml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
-    "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/diandianjun/os-educg/project2210132-226009/examples/example6/file_test/Cargo.toml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/examples/example6/file_test" />
@@ -159,7 +175,9 @@
       <workItem from="1716667936605" duration="2726000" />
       <workItem from="1716687697769" duration="3009000" />
       <workItem from="1716705063818" duration="137000" />
-      <workItem from="1716705230054" duration="610000" />
+      <workItem from="1716705230054" duration="3755000" />
+      <workItem from="1716709574340" duration="480000" />
+      <workItem from="1716713583382" duration="1800000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -313,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716705530856</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update Demo video">
+      <option name="closed" value="true" />
+      <created>1716706001183</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716706001183</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +372,8 @@
     <MESSAGE value="update thread and mutex module" />
     <MESSAGE value="update develop document and rt-smart-std" />
     <MESSAGE value="update work-log" />
-    <option name="LAST_COMMIT_MESSAGE" value="update work-log" />
+    <MESSAGE value="update Demo video" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Demo video" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

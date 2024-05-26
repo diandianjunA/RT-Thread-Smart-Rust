@@ -8,100 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6775b271-a8c3-445a-a9fa-a5724f86fb0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/aarch64-unknown-rtsmart/debug/deps/mutex_test-56c4e296fa52f1fb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/10g6hsuglium18im.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/14pjlhbtwr0be3ym.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/15wke4fonh20fzca.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/17wmix4j37dd28la.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/1byjvouqmh99enu2.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/1ojprbeka5r991oa.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/1pj0jiazpnaj6nao.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/1vni8zfy0zwdmgd7.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/2640uq1oxxifr3cs.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/2809co28f61nbmxf.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/2dia761sxq74wj23.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/2j6f8oruvhr0u551.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/2ootw2ncspo9jtqg.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/2p2sqrytq1fk3zyg.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/2r9ehbjv1ju6kyvc.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/3fs7de79hwfngc73.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/3mcd5qlzol3w1exc.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/3pcntd05polbwed1.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/3sb3cp7xj2ezcdnd.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/3v0irnhosb9j0agq.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/46phtuzx9zz79ds4.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/4b865kzbtpkidc7r.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/4l0kscn413j5xjeb.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/4qs0kgovnj3ulsxk.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/4s3v9d07im9jyjpb.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/4vqd4rw95jlkpj94.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/4z6wpiafg08ctpqp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/5g8qrwd6qyo5kwff.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/dep-graph.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/of8y7zzky0sgwfv.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/oj3lpnxuziqwmna.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/ptv1gapqedfm7ry.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/query-cache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey-3802kfejws314zxzxv34q10za/work-products.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../example4/mutex_test/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi3vo4vc1-1oqukey.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/10g6hsuglium18im.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/14pjlhbtwr0be3ym.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/15wke4fonh20fzca.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/17wmix4j37dd28la.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/1byjvouqmh99enu2.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/1ojprbeka5r991oa.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/1pj0jiazpnaj6nao.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/1vni8zfy0zwdmgd7.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/2640uq1oxxifr3cs.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/2809co28f61nbmxf.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/2dia761sxq74wj23.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/2j6f8oruvhr0u551.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/2ootw2ncspo9jtqg.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/2p2sqrytq1fk3zyg.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/2r9ehbjv1ju6kyvc.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/3fs7de79hwfngc73.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/3mcd5qlzol3w1exc.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/3pcntd05polbwed1.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/3sb3cp7xj2ezcdnd.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/3v0irnhosb9j0agq.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/46phtuzx9zz79ds4.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/4b865kzbtpkidc7r.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/4l0kscn413j5xjeb.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/4qs0kgovnj3ulsxk.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/4s3v9d07im9jyjpb.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/4vqd4rw95jlkpj94.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/4z6wpiafg08ctpqp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/5g8qrwd6qyo5kwff.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/dep-graph.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/of8y7zzky0sgwfv.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/oj3lpnxuziqwmna.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/ptv1gapqedfm7ry.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/query-cache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk-3802kfejws314zxzxv34q10za/work-products.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/incremental/marco_main-1bxhn41epb9xe/s-gwi9eaem2x-qs7tpk.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../worklog/img/2024.04.22-2024.04.29-work-log/thread_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../worklog/img/2024.04.30-2024.05.06-work-log/mutex_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../worklog/img/2024.05.07-2024.05.14-work-log/read_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.22-2024.04.29-work-log.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.30-2024.05.06-work-log.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../worklog/markdown/2024.05.07-2024.05.14-work-log.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../worklog/markdown/2024.05.15-2024.05.22-work-log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../img/stdout_compile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../img/stdout_test.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example2/hello/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example2/hello/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example3/thread_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example3/thread_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example4/mutex_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example4/mutex_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example6/file_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example6/file_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../marco_main/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../marco_main/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/api/thread.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/api/thread.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/fs.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/fs.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/mutex.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/mutex.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/stdin.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/stdin.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/thread.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/thread.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.08-2024.04.14-work-log.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.08-2024.04.14-work-log.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.15-2024.04.21-work-log.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../worklog/markdown/2024.04.15-2024.04.21-work-log.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../开发文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../img/file_test1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../img/file_test2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../img/file_test3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../img/file_test4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../img/mutex_test1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../img/read_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../img/thread_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../技术文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../技术文档.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +97,7 @@
       <workItem from="1716615379621" duration="2224000" />
       <workItem from="1716665834288" duration="1520000" />
       <workItem from="1716693229559" duration="725000" />
+      <workItem from="1716710061562" duration="264000" />
     </task>
     <servers />
   </component>
