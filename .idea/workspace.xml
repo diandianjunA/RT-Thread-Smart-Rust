@@ -22,7 +22,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update development document">
-      <change beforePath="$PROJECT_DIR$/技术文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +165,9 @@
       <workItem from="1716733093811" duration="2087000" />
       <workItem from="1716907589069" duration="4202000" />
       <workItem from="1717068573168" duration="1726000" />
-      <workItem from="1717080808299" duration="763000" />
+      <workItem from="1717080808299" duration="1787000" />
+      <workItem from="1717223620054" duration="1000" />
+      <workItem from="1717223645660" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -383,7 +385,31 @@
       <option name="project" value="LOCAL" />
       <updated>1717081480904</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="update development document">
+      <option name="closed" value="true" />
+      <created>1717081582271</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1717081582271</updated>
+    </task>
+    <task id="LOCAL-00029" summary="update development document">
+      <option name="closed" value="true" />
+      <created>1717081805886</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1717081805886</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update development document">
+      <option name="closed" value="true" />
+      <created>1717081869749</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1717081869749</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
