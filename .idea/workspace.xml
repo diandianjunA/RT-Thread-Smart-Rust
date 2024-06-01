@@ -21,13 +21,7 @@
     <cargoProject FILE="$PROJECT_DIR$/examples/example6/file_test/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update video">
-      <change beforePath="$PROJECT_DIR$/video/fs库测试程序运行演示.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/mutex库测试程序演示视频.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/stdin库测试程序演示视频.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/stdout库测试程序演示视频.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/thread库测试程序演示视频.mp4" beforeDir="false" />
-    </list>
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update video" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +166,7 @@
       <workItem from="1717080808299" duration="1787000" />
       <workItem from="1717223620054" duration="1000" />
       <workItem from="1717223645660" duration="3000" />
-      <workItem from="1717225878872" duration="357000" />
+      <workItem from="1717225878872" duration="872000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -422,7 +416,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717225965394</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="update video">
+      <option name="closed" value="true" />
+      <created>1717226240604</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1717226240604</updated>
+    </task>
+    <task id="LOCAL-00033" summary="update video">
+      <option name="closed" value="true" />
+      <created>1717226535339</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717226535339</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
