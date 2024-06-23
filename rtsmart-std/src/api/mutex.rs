@@ -4,10 +4,9 @@ use libc::{rt_err_t, rt_mutex_create, rt_mutex_delete, rt_mutex_release, rt_mute
 
 pub fn mutex_create(name: &str) -> Option<rt_mutex_t> {
     let s = CString::new(name).unwrap();
-    let s = s.as_ptr() as *const u8;
     let raw;
     unsafe {
-        raw = rt_mutex_create(s, 1);
+        raw = rt_mutex_create(s.as_ptr() as *const u8, 1);
     }
     if raw == core::ptr::null_mut() {
         None

@@ -10,7 +10,7 @@ unsafe impl<T: Send> Send for Mutex<T> {}
 unsafe impl<T: Send> Sync for Mutex<T> {}
 
 
-pub struct Mutex<T: Sized> {
+pub struct Mutex<T: ?Sized> {
     mutex: rt_mutex_t,
     data: UnsafeCell<T>,
 }
@@ -70,8 +70,8 @@ impl<T> Mutex<T> {
         })
     }
 
-    pub fn try_lock(&self) -> Result<MutexGuard<T>, RTTError> {
-        let ret = mutex_take(self.mutex, 0);
+    pub fn try_lock(&self, max_wait: isize) -> Result<MutexGuard<T>, RTTError> {
+        let ret = mutex_take(self.mutex, max_wait);
         if ret != 0 {
             return Err(RTTError::MutexTakeTimeout);
         }
