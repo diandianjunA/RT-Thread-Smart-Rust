@@ -11,6 +11,9 @@
       <sourceFolder url="file://$MODULE_DIR$/examples/example4/mutex_test/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/example5/read_test/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/example6/file_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example7/log_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example8/param_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example9/semaphore_test/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example1/hello/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example2/hello/target" />
       <excludeFolder url="file://$MODULE_DIR$/libc/target" />
@@ -20,6 +23,24 @@
       <excludeFolder url="file://$MODULE_DIR$/examples/example4/mutex_test/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example5/read_test/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example6/file_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example7/log_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example8/param_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example9/semaphore_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/alloc-ad169c4dffbd0497" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/channel_test-1b415ac20477ef22" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/compiler_builtins-2da8dcd752ae1e46" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/compiler_builtins-ab05685e4d5a4a7e" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/core-99cdb6f114a7d87e" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/libc-0200f9f0a303b654" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/libc-7c7977ccfa74036f" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/.fingerprint/rustc-std-workspace-core-2d3c6f92b62381cf" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/build" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/examples" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/aarch64-unknown-rtsmart/release/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/release" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/sysroot" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
