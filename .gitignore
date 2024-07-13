@@ -1,0 +1,13 @@
+/rtsmart-std/target
+/marco_main/target
+/libc/target
+/examples/example1/hello/target
+/examples/example2/hello/target
+/examples/example3/thread_test/target
+/examples/example4/mutex_test/target
+/examples/example5/read_test/target
+/examples/example6/file_test/target
+/examples/example7/log_test/target
+/examples/example8/param_test/target
+/examples/example9/semaphore_test/target
+/examples/example10/channel_test/target
