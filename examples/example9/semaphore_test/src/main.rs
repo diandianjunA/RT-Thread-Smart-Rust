@@ -10,7 +10,7 @@ use rtsmart_std::param::Param;
 use rtsmart_std::semaphore::Semaphore;
 use rtsmart_std::{println, thread, time};
 
-#[marco_main_use(appname = "rust_sem_test", desc = "Rust example7 app.")]
+#[marco_main_use(appname = "rust_sem_test", desc = "Rust example9 app.")]
 fn rust_main(_param: Param) {
     let send = Arc::new(Semaphore::new("Semaphore").unwrap());
     let recv = send.clone();
