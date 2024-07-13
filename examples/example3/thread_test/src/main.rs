@@ -8,25 +8,30 @@ use core::time::Duration;
 use marco_main::marco_main_use;
 use rtsmart_std::{println, time};
 use rtsmart_std::thread::Thread;
+use rtsmart_std::param::Param;
 
 #[marco_main_use(appname = "rust_thread_test", desc = "Rust example3 app.")]
-fn main() {
+fn rust_main(_param: Param) {
     println!("Hello world");
     let run1 = || loop {
         time::sleep(Duration::new(1, 0));
-        let mut sum = 0;
-        for i in 0..10 {
-            sum += i;
+        {
+            let mut sum = 0;
+            for i in 0..10 {
+                sum += i;
+            }
+            println!("thread1: {}", sum);
         }
-        println!("thread1: {}", sum);
     };
     let run2 = || loop {
         time::sleep(Duration::new(1, 0));
-        let mut sum = 0;
-        for i in 0..10 {
-            sum += i;
+        {
+            let mut sum = 0;
+            for i in 0..10 {
+                sum += i;
+            }
+            println!("thread2: {}", sum);
         }
-        println!("thread2: {}", sum);
     };
 
     let t1 = Thread::new()
@@ -37,9 +42,9 @@ fn main() {
         .name("thread 2")
         .stack_size(4096)
         .start(run2.clone());
+    time::sleep(Duration::new(5, 0));
     let thread1 = t1.unwrap();
     let thread2 = t2.unwrap();
-    time::sleep(Duration::new(5, 0));
     thread1.delete().unwrap();
     thread2.delete().unwrap();
     println!("Thread1 and Thread2 are deleted");

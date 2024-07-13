@@ -2095,6 +2095,9 @@ pub type rt_thread_t = *mut c_void;
 pub type rt_tick_t = rt_uint32_t;
 pub type rt_ubase_t = c_ulong;
 pub type rt_size_t = rt_ubase_t;
+pub type rt_sem_t = *mut c_void;
+pub type rt_mailbox_t = *mut c_void;
+pub type rt_mq_t = *mut c_void;
 
 s!{
     pub struct rt_mutex {
@@ -2152,6 +2155,24 @@ extern "C" {
 
     pub fn rt_malloc(size: rt_size_t) -> *mut ::c_void;
     pub fn rt_free(ptr: *mut ::c_void);
+
+    pub fn rt_sem_create(name: *const ::c_char, value: ::rt_int32_t, flag: ::rt_uint8_t) -> rt_sem_t;
+    pub fn rt_sem_delete(sem: rt_sem_t) -> rt_err_t;
+    pub fn rt_sem_take(sem: rt_sem_t, time: ::rt_int32_t) -> rt_err_t;
+    pub fn rt_sem_release(sem: rt_sem_t) -> rt_err_t;
+
+    pub fn rt_mb_create(name: *const ::c_char, size: rt_size_t, flag: rt_uint8_t) -> rt_mailbox_t;
+    pub fn rt_mb_init(mb: rt_mailbox_t, name: *const ::c_char, msgpool: *mut ::c_void, size: rt_size_t, flag: rt_uint8_t) -> rt_err_t;
+    pub fn rt_mb_send(mb: rt_mailbox_t, value: rt_uint32_t) -> rt_err_t;
+    pub fn rt_mb_recv(mb: rt_mailbox_t, value: *mut rt_uint32_t, timeout: rt_int32_t) -> rt_err_t;
+    pub fn rt_mb_detach(mb: rt_mailbox_t) -> rt_err_t;
+
+    pub fn rt_mq_create(name: *const ::c_char, msg_size: rt_size_t, max_msgs: rt_size_t, flag: rt_uint8_t) -> rt_mq_t;
+    pub fn rt_mq_send(mq: rt_mq_t, buffer: *const ::c_void, size: rt_size_t) -> rt_err_t;
+    pub fn rt_mq_send_wait(mq: rt_mq_t, buffer: *const ::c_void, size: rt_size_t, timeout: rt_int32_t) -> rt_err_t;
+    pub fn rt_mq_recv(mq: rt_mq_t, buffer: *mut ::c_void, size: rt_size_t, timeout: rt_int32_t) -> rt_base_t;
+    pub fn rt_mq_delete(mq: rt_mq_t) -> rt_err_t;
+    pub fn rt_mq_detach(mq: rt_mq_t) -> rt_err_t;
 }
 
 pub const RT_EOK: ::c_int = 0;
@@ -2174,6 +2195,18 @@ pub const RT_ENOBUFS: ::c_int = 16;
 pub const RT_ESCHEDISR: ::c_int = 17;
 pub const RT_ESCHEDLOCKED: ::c_int = 18;
 
+// 先进先出模式
+pub const RT_IPC_FLAG_FIFO: ::rt_uint8_t = 0x00;
+// 优先级模式
+pub const RT_IPC_FLAG_PRIO: ::rt_uint8_t = 0x01;
+// 未知的IPC命令
+pub const RT_IPC_CMD_UNKNOWN: ::c_int = 0x00;
+// 复位IPC对象命令
+pub const RT_IPC_CMD_RESET: ::c_int = 0x01;
+// 永远阻塞直到获得资源
+pub const RT_WAITING_FOREVER: ::rt_int32_t = -1;
+// 无阻塞
+pub const RT_WAITING_NO: ::rt_int32_t = 0;
 
 
 

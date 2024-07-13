@@ -1,0 +1,8 @@
+[package]
+name = "semaphore_test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+marco_main = {path = "../../../marco_main"}
+rtsmart-std = { path = "../../../rtsmart-std" }
