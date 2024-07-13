@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/examples/example4/mutex_test/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/example5/read_test/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/example6/file_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/example7/semaphore_test/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example1/hello/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example2/hello/target" />
       <excludeFolder url="file://$MODULE_DIR$/libc/target" />
@@ -20,6 +21,7 @@
       <excludeFolder url="file://$MODULE_DIR$/examples/example4/mutex_test/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example5/read_test/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example6/file_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example7/semaphore_test/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -20,6 +20,10 @@ pub mod thread;
 pub mod mutex;
 pub mod stdin;
 pub mod fs;
+pub mod logging;
+pub mod param;
+pub mod semaphore;
+pub mod mpsc;
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum RTTError {
