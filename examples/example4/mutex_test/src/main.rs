@@ -9,15 +9,18 @@ use core::time::Duration;
 use marco_main::marco_main_use;
 use rtsmart_std::{println, thread, time};
 use rtsmart_std::mutex::Mutex;
+use rtsmart_std::param::Param;
 
 #[marco_main_use(appname = "rust_mutex_test", desc = "Rust example4 app.")]
-fn main() {
+fn rust_main(_param: Param) {
     let counter = Arc::new(Mutex::new(0).unwrap());
     let run = move || loop {
         time::sleep(Duration::new(1, 0));
-        let mut c = counter.lock().unwrap();
-        *c += 1;
-        println!("c :{}", *c);
+        {
+            let mut c = counter.lock().unwrap();
+            *c += 1;
+            println!("c :{}", *c);
+        }
     };
 
     let t1 = thread::Thread::new()

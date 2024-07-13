@@ -6,7 +6,6 @@ extern crate syn;
 use darling::FromMeta;
 use proc_macro::TokenStream;
 use proc_macro2::{Literal, Span};
-use quote::ToTokens;
 use syn::{parse, spanned::Spanned, ReturnType, Visibility};
 
 #[derive(Debug, FromMeta)]
@@ -38,12 +37,18 @@ pub fn marco_main_use(args: TokenStream, input: TokenStream) -> TokenStream {
             .into();
     }
 
+    // let main_func_name = format_ident!("__{}_main_func", arg.appname.as_ref().unwrap());
+    let main_func_name = format_ident!("main");
+    let mod_name = format_ident!("__app_init_{}_", arg.appname.as_ref().unwrap());
+    let call_func_name = f.sig.ident.clone();
+
     // check the function signature
     let valid_signature = f.sig.constness.is_none()
         && f.sig.unsafety.is_none()
         && f.sig.asyncness.is_none()
         && f.vis == Visibility::Inherited
         && f.sig.abi.is_none()
+        && f.sig.inputs.len() == 1
         && f.sig.generics.params.is_empty()
         && f.sig.generics.where_clause.is_none()
         && f.sig.variadic.is_none()
@@ -51,24 +56,58 @@ pub fn marco_main_use(args: TokenStream, input: TokenStream) -> TokenStream {
         ReturnType::Default => true,
         _ => false,
     };
+
     if !valid_signature {
         return parse::Error::new(
             f.span(),
-            "`#[entry]` function must have signature `fn()`",
+            "`#[entry]` function must have signature `fn(arg: vec::IntoIter<&[u8]>)`",
         )
             .to_compile_error()
             .into();
-    };
-    let content = f.block.into_token_stream();
+    }
+
+    let attrs = f.attrs.clone();
+
+    let origin = quote!(
+        #(#attrs)*
+        #f
+    );
+
     let core = quote!(
         #[no_mangle]
-        pub extern "C" fn main(_argc: isize, _argv: *const *const u8) -> usize {
-            #content
-            return 0;
+        pub unsafe extern "C" fn #main_func_name(argc: u32, argv: *const *const u8) {
+            use core::iter::Iterator;
+            use rtsmart_std::param::ParamItem;
+            let vec = {
+                (0..argc as isize)
+                    .map(|i| {
+                        let mut len = 0usize;
+                        loop {
+                            if *(*argv.offset(i)).offset(len as isize) != b'\0' {
+                                len += 1;
+                            } else {
+                                break
+                            }
+                        }
+                        ParamItem::new(core::slice::from_raw_parts::<'static, _>(*argv.offset(i), len))
+                    })
+                    .collect::<Vec<_>>()
+            };
+            #call_func_name (vec.into_iter())
         }
     );
 
     quote!(
-        #core
-    ).into()
+        #origin
+        mod #mod_name {
+            use super::#call_func_name;
+            use core::marker::Sync;
+            extern crate alloc;
+            use alloc::vec::Vec;
+            use core::iter::IntoIterator;
+
+            #core
+        }
+    )
+        .into()
 }

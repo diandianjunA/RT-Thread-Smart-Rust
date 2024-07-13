@@ -5,9 +5,10 @@ extern crate alloc;
 
 use marco_main::marco_main_use;
 use rtsmart_std::{fs, println};
+use rtsmart_std::param::Param;
 
 #[marco_main_use(appname = "rust_file_test", desc = "Rust example6 app.")]
-fn main() {
+fn rust_main(_param: Param) {
     let res_file = fs::OpenOptions::new()
         .read(true)
         .write(true)
