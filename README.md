@@ -74,7 +74,7 @@ RT-Thread Smart（简称rt-smart）是适用于嵌入式平台的实时操作系
 - 该项目的技术文档位于主目录下，其内包含项目的的基本情况以及技术的运用：[技术文档](https://gitlab.eduxiji.net/T202410487992548/project2210132-226009/-/blob/main/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3.pdf)
 - 所有文档均提供了markdown格式与pdf格式各一份
 - 由于Rust编译器源代码过于庞大，因此该项目中Rust编译器部分按照编译器源代码的目录格式，仅包含修改过的文件或新增加的文件
-- 测试程序的演示视频位于video目录下：[video](https://gitlab.eduxiji.net/T202410487992548/project2210132-226009/-/tree/main/video)，如果视频无法播放，也可在百度网盘中查看：链接: https://pan.baidu.com/s/1fbUtcwM0rAazOONh09krGA?pwd=1234 提取码: 1234
+- 测试程序的演示视频可在百度网盘中查看：链接: https://pan.baidu.com/s/1fbUtcwM0rAazOONh09krGA?pwd=1234 提取码: 1234
 
 ## 项目意义
 
