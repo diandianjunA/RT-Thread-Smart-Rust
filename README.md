@@ -65,36 +65,7 @@ RT-Thread Smart（简称rt-smart）是适用于嵌入式平台的实时操作系
 代码和文档都存储Gitlab仓库中。以下是仓库目录和文件描述： 
 
 ```plaintext
-.project2210132-226009/						
-│   README.md				//项目说明文件
-│   技术文档.md				//技术文档
-│   技术文档.pdf			    //技术文档PDF版本
-├─ img/                     //技术文档图片
-├─ examples/                //标准库测试程序
-│	├── example1/hello		//libc和rust编译目标的测试，最小的Rust语言程序
-│	├── example2/hello		//测试marco_main属性宏和stdout库的测试程序
-│	├── example3/thread_test//测试thread库的测试程序
-│	├── example4/mutex_test //测试mutex库的测试程序
-│	├── example5/read_test  //测试stdin库的测试程序
-│	└── example6/file_test  //测试fs库的测试程序
-├─ libc/					//Rust在不同系统平台的外部函数接口
-├─ marco_main/				//将Rust风格的main函数转换为C风格的main函数的属性宏
-├─ rtsmart-std/				//基于libc开发的rtsmart平台上的标准库
-│	├── src/				//源代码
-│		├── api/			//封装调用libc的api
-│		├── prelude/		//预引入的库
-│		│   fs.rs			//fs库
-│		│   lib.rs			//模块声明
-│		│   malloc.rs		//内存分配器
-│		│   mutex.rs		//mutex库
-│		│   put.rs			//stdout库的辅助模块
-│		│   stdin.rs		//stdin库
-│		│   stdout.rs		//stdout库
-│		│   thread.rs		//thread库
-│		└── time.rs			//time库
-├─ rust/					//为添加编译目标，在rust编译器源代码中修改或添加的文件
-├─ video/					//标准库测试程序的演示视频
-└─ worklog/					//每周的工作日志
+
 ```
 
 - 该项目完整的开发流程记录在worklog目录下的每周的工作日志内：[worklog](https://gitlab.eduxiji.net/T202410487992548/project2210132-226009/-/tree/main/worklog)
