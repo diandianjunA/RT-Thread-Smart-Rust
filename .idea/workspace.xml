@@ -25,31 +25,10 @@
     <cargoProject FILE="$PROJECT_DIR$/bench/rust_bench/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update video">
-      <change afterPath="$PROJECT_DIR$/bench/c_bench/main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bench/rust_bench/.cargo/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bench/rust_bench/Cargo.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bench/rust_bench/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bench/rust_bench/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/img/2024.07.21-2024.07.27-work-log/bench.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/img/2024.07.21-2024.07.27-work-log/c_result.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/img/2024.07.21-2024.07.27-work-log/rust_result.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.07.14-2024.07.20-work-log.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.07.21-2024.07.27-work-log.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.07.14-2024.07.20-work-log.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.07.21-2024.07.27-work-log.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project2210132-226009.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project2210132-226009.iml" afterDir="false" />
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update benchmark">
+      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/boot.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/boot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/connect.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/connect.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/error.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/scons.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/scons.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/sscerror.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/sscerror.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/start.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/start.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worklog/markdown/2024.07.14-2024.07.28-work-log.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +182,7 @@
       <workItem from="1722308793845" duration="33000" />
       <workItem from="1722310122839" duration="2826000" />
       <workItem from="1722319029375" duration="1705000" />
-      <workItem from="1722321838695" duration="635000" />
+      <workItem from="1722321838695" duration="4111000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -429,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722153862840</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update benchmark">
+      <option name="closed" value="true" />
+      <created>1722325136010</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1722325136010</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +455,8 @@
     <MESSAGE value="update readme" />
     <MESSAGE value="update development document" />
     <MESSAGE value="update video" />
-    <option name="LAST_COMMIT_MESSAGE" value="update video" />
+    <MESSAGE value="update benchmark" />
+    <option name="LAST_COMMIT_MESSAGE" value="update benchmark" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
