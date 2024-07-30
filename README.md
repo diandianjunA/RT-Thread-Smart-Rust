@@ -6,6 +6,10 @@
 | 指导老师 | 苏曙光               |
 | 参赛学校 | 华中科技大学         |
 
+说明：本项目采用 [Apache-2.0](https://opensource.org/licenses/Apache-2.0) 开源协议
+
+开源协议文本为[LICENSE.txt](https://gitlab.eduxiji.net/T202410487992548/project2210132-226009/-/blob/main/LICENSE.txt)
+
 ## 目标描述
 
 RT-Thread Smart（简称rt-smart）是适用于嵌入式平台的实时操作系统。
