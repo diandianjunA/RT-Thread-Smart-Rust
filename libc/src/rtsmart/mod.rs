@@ -2209,7 +2209,6 @@ pub const RT_WAITING_FOREVER: ::rt_int32_t = -1;
 pub const RT_WAITING_NO: ::rt_int32_t = 0;
 
 
-
 //Dummy functions, these don't really exist in VxWorks.
 
 // wait.h macros

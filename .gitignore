@@ -11,3 +11,4 @@
 /examples/example8/param_test/target
 /examples/example9/semaphore_test/target
 /examples/example10/channel_test/target
+/bench/rust_bench/target

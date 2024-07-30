@@ -22,14 +22,34 @@
     <cargoProject FILE="$PROJECT_DIR$/examples/example7/semaphore_test/Cargo.toml" />
     <cargoProject FILE="$PROJECT_DIR$/examples/example7/log_test/Cargo.toml" />
     <cargoProject FILE="$PROJECT_DIR$/examples/example8/param_test/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/bench/rust_bench/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update video">
-      <change beforePath="$PROJECT_DIR$/video/fs库测试程序运行演示.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/mutex库测试程序运行演示.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/stdin库测试程序运行演示.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/stdout库测试程序运行演示.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/thread库测试程序运行演示.mp4" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/bench/c_bench/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bench/rust_bench/.cargo/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bench/rust_bench/Cargo.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bench/rust_bench/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bench/rust_bench/src/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/img/2024.07.21-2024.07.27-work-log/bench.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/img/2024.07.21-2024.07.27-work-log/c_result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/img/2024.07.21-2024.07.27-work-log/rust_result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.07.14-2024.07.20-work-log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/markdown/2024.07.21-2024.07.27-work-log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.07.14-2024.07.20-work-log.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worklog/pdf/2024.07.21-2024.07.27-work-log.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project2210132-226009.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project2210132-226009.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/boot.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/boot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/connect.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/connect.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/error.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/error.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/scons.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/scons.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/sscerror.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/sscerror.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.28-work-log/start.png" beforeDir="false" afterPath="$PROJECT_DIR$/worklog/img/2024.07.14-2024.07.20-work-log/start.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worklog/markdown/2024.07.14-2024.07.28-work-log.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +67,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -77,8 +102,8 @@
     &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/diandianjun/os-educg/project2210132-226009/examples/example6/file_test/Cargo.toml&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/diandianjun/os-educg/project2210132-226009&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -173,6 +198,12 @@
       <workItem from="1716907589069" duration="4202000" />
       <workItem from="1717068573168" duration="1726000" />
       <workItem from="1717080808299" duration="763000" />
+      <workItem from="1722307653414" duration="26000" />
+      <workItem from="1722308306167" duration="147000" />
+      <workItem from="1722308793845" duration="33000" />
+      <workItem from="1722310122839" duration="2826000" />
+      <workItem from="1722319029375" duration="1705000" />
+      <workItem from="1722321838695" duration="635000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -390,7 +421,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717081480904</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="update video">
+      <option name="closed" value="true" />
+      <created>1722153862840</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1722153862840</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +467,8 @@
     <MESSAGE value="update development document and readme" />
     <MESSAGE value="update readme" />
     <MESSAGE value="update development document" />
-    <option name="LAST_COMMIT_MESSAGE" value="update development document" />
+    <MESSAGE value="update video" />
+    <option name="LAST_COMMIT_MESSAGE" value="update video" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

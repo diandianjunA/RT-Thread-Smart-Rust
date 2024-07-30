@@ -14,6 +14,7 @@
       <sourceFolder url="file://$MODULE_DIR$/examples/example7/log_test/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/example8/param_test/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/examples/example9/semaphore_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bench/rust_bench/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example1/hello/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example2/hello/target" />
       <excludeFolder url="file://$MODULE_DIR$/libc/target" />
@@ -41,6 +42,7 @@
       <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/debug" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/release" />
       <excludeFolder url="file://$MODULE_DIR$/examples/example10/channel_test/target/sysroot" />
+      <excludeFolder url="file://$MODULE_DIR$/bench/rust_bench/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
