@@ -132,20 +132,20 @@ impl Thread {
         }
     }
     
-    pub fn delay(ms: i32) -> RTResult<()> {
-        let ret = thread_m_delay(ms);
-        if ret == 0 {
-            Ok(())
-        } else {
-            Err(ThreadStartupErr)
-        }
-    }
-    
     pub fn self_() -> Option<Thread> {
         thread_self().map(Thread)
     }
     
     pub fn raw(&self) -> rt_thread_t {
         self.0
+    }
+}
+
+pub fn delay(ms: i32) -> RTResult<()> {
+    let ret = thread_m_delay(ms);
+    if ret == 0 {
+        Ok(())
+    } else {
+        Err(ThreadStartupErr)
     }
 }

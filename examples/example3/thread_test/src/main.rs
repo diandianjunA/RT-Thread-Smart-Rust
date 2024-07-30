@@ -7,7 +7,7 @@ use core::time::Duration;
 
 use marco_main::marco_main_use;
 use rtsmart_std::{println, time};
-use rtsmart_std::thread::Thread;
+use rtsmart_std::thread::{delay, Thread};
 use rtsmart_std::param::Param;
 
 #[marco_main_use(appname = "rust_thread_test", desc = "Rust example3 app.")]
@@ -42,10 +42,4 @@ fn rust_main(_param: Param) {
         .name("thread 2")
         .stack_size(4096)
         .start(run2.clone());
-    time::sleep(Duration::new(5, 0));
-    let thread1 = t1.unwrap();
-    let thread2 = t2.unwrap();
-    thread1.delete().unwrap();
-    thread2.delete().unwrap();
-    println!("Thread1 and Thread2 are deleted");
 }

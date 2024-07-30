@@ -31,8 +31,4 @@ fn rust_main(_param: Param) {
         .name("thread 2")
         .stack_size(4096)
         .start(run.clone()).unwrap();
-    time::sleep(Duration::new(5, 0));
-    t1.delete().unwrap();
-    t2.delete().unwrap();
-    println!("Thread1 and Thread2 are deleted");
 }

@@ -49,6 +49,16 @@ pub enum RTTError {
 
 pub type RTResult<T> = Result<T, RTTError>;
 
+fn panic_on_atomic_context(s: &str) {
+    use core::intrinsics::unlikely;
+    let is_irq_context = || unsafe { 
+        libc::rt_interrupt_get_nest() != 0
+    };
+    if unlikely(is_irq_context()) {
+        panic!("In irq context {}", s);
+    }
+}
+
 #[panic_handler]
 #[inline(never)]
 fn panic(info: &core::panic::PanicInfo) -> ! {
