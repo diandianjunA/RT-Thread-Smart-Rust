@@ -65,7 +65,147 @@ RT-Thread Smart（简称rt-smart）是适用于嵌入式平台的实时操作系
 代码和文档都存储Gitlab仓库中。以下是仓库目录和文件描述： 
 
 ```plaintext
-
+.
+├── 技术文档.md # 项目技术文档
+├── 技术文档.pdf # 项目技术文档PDF版本
+├── bench # C与Rust性能对比测试程序
+│   ├── c_bench
+│   │   └── main.c
+│   └── rust_bench
+│       ├── Cargo.lock
+│       ├── Cargo.toml
+│       └── src
+│           └── main.rs
+├── data.csv # C与Rust性能对比测试结果
+├── examples # 标准库测试程序
+│   ├── example1 # libc和rust编译目标的测试，最小的Rust语言程序
+│   │   └── hello
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example2 # 测试marco_main属性宏和stdout库的测试程序
+│   │   └── hello
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example3 # 测试thread库的测试程序
+│   │   └── thread_test
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example4 # 测试mutex库的测试程序
+│   │   └── mutex_test
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example5 # 测试stdin库的测试程序
+│   │   └── read_test
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example6 # 测试fs库的测试程序
+│   │   └── file_test
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example7 # 测试logging库的测试程序
+│   │   └── log_test
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example8 # 测试marco_main属性宏接受参数的测试程序
+│   │   └── param_test
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   ├── example9 # 测试semaphore库的测试程序
+│   │   └── semaphore_test
+│   │       ├── Cargo.lock
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── main.rs
+│   └── example10 # 测试channel库的测试程序
+│       └── channel_test
+│           ├── Cargo.lock
+│           ├── Cargo.toml
+│           └── src
+│               └── main.rs
+├── img # 技术文档图片
+├── libc # Rust在不同系统平台的外部函数接口
+│   ├── build.rs
+│   ├── Cargo.toml
+│   ├── CONTRIBUTING.md
+│   ├── LICENSE-APACHE
+│   ├── LICENSE-MIT
+│   ├── README.md
+│   ├── rustfmt.toml
+│   ├── src
+│   │   ├── fixed_width_ints.rs
+│   │   ├── fuchsia
+│   │   ├── hermit
+│   │   ├── lib.rs
+│   │   ├── macros.rs
+│   │   ├── rtsmart # Rust在rt-smart系统平台的外部函数接口
+│   │   │   ├── aarch64.rs
+│   │   │   ├── arm.rs
+│   │   │   └── mod.rs
+│   │   ├── sgx.rs
+│   │   ├── solid
+│   │   ├── switch.rs
+│   │   ├── teeos
+│   │   ├── unix
+│   │   ├── vxworks
+│   │   ├── wasi.rs
+│   │   ├── windows
+│   │   └── xous.rs
+│   └── triagebot.toml
+├── LICENSE.txt # 开源协议文本
+├── marco_main # 将Rust风格的main函数转换为C风格的main函数的属性宏
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── README.md # 项目说明文件
+├── rtsmart-std # 基于libc开发的rtsmart平台上的标准库
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   └── src
+│       ├── api # 封装调用libc的api
+│       │   ├── mem.rs
+│       │   ├── mod.rs
+│       │   ├── mpsc.rs
+│       │   ├── mutex.rs
+│       │   ├── semaphore.rs
+│       │   └── thread.rs
+│       ├── fs.rs # fs库
+│       ├── lib.rs # 模块声明
+│       ├── logging.rs # logging库
+│       ├── malloc.rs # 内存分配器
+│       ├── mpsc.rs # channel库
+│       ├── mutex.rs # mutex库
+│       ├── param.rs # marco_main接受参数封装类型
+│       ├── prelude # 预引入声明
+│       │   ├── mod.rs
+│       │   └── no_std.rs
+│       ├── puts.rs # stdout库的辅助模块
+│       ├── semaphore.rs # semaphore库
+│       ├── stdin.rs # stdin库
+│       ├── stdout.rs # stdout库
+│       ├── thread.rs # thread库
+│       └── time.rs # time库
+├── rust # 为添加编译目标，在rust编译器源代码中修改或添加的文件
+└── worklog # 每周的工作日志
+    ├── img # 每周的工作日志所使用的图片
+    ├── markdown # 每周的工作日志markdown格式
+    └── pdf # 每周的工作日志pdf格式
 ```
 
 - 该项目完整的开发流程记录在worklog目录下的每周的工作日志内：[worklog](https://gitlab.eduxiji.net/T202410487992548/project2210132-226009/-/tree/main/worklog)
