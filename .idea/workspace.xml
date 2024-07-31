@@ -25,30 +25,9 @@
     <cargoProject FILE="$PROJECT_DIR$/bench/rust_bench/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update readme">
-      <change afterPath="$PROJECT_DIR$/bench/c_bench/c_bench" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bench.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/boot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/channel_compile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/channel_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/connect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/logging_compile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/logging_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/param_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/scons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/semaphore_compile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/semaphore_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/sscerror.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/start.png" afterDir="false" />
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update technique document">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example3/thread_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example3/thread_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example4/mutex_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example4/mutex_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example5/read_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example5/read_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example7/log_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example7/log_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example8/param_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example8/param_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rtsmart-std/src/thread.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/thread.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/技术文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/技术文档.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.pdf" afterDir="false" />
     </list>
@@ -204,7 +183,7 @@
       <workItem from="1722308793845" duration="33000" />
       <workItem from="1722310122839" duration="2826000" />
       <workItem from="1722319029375" duration="1705000" />
-      <workItem from="1722321838695" duration="10727000" />
+      <workItem from="1722321838695" duration="11853000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -470,7 +449,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722340406370</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="update technique document">
+      <option name="closed" value="true" />
+      <created>1722356646299</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1722356646299</updated>
+    </task>
+    <task id="LOCAL-00035" summary="update technique document">
+      <option name="closed" value="true" />
+      <created>1722394094561</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1722394094561</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +506,8 @@
     <MESSAGE value="update benchmark" />
     <MESSAGE value="update example10" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="update technique document" />
+    <option name="LAST_COMMIT_MESSAGE" value="update technique document" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
