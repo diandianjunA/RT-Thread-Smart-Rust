@@ -1,38 +1,38 @@
-//! [Flexible targets specification.](https://github.com/rust-lang/rfcs/pull/131)
+//! [Flexible target specification.](https://github.com/rust-lang/rfcs/pull/131)
 //!
 //! Rust targets a wide variety of usecases, and in the interest of flexibility,
-//! allows new targets triples to be defined in configuration files. Most users
+//! allows new target triples to be defined in configuration files. Most users
 //! will not need to care about these, but this is invaluable when porting Rust
 //! to a new platform, and allows for an unprecedented level of control over how
 //! the compiler works.
 //!
 //! # Using custom targets
 //!
-//! A targets triple, as passed via `rustc --targets=TRIPLE`, will first be
+//! A target triple, as passed via `rustc --target=TRIPLE`, will first be
 //! compared against the list of built-in targets. This is to ease distributing
 //! rustc (no need for configuration files) and also to hold these built-in
 //! targets as immutable and sacred. If `TRIPLE` is not one of the built-in
 //! targets, rustc will check if a file named `TRIPLE` exists. If it does, it
-//! will be loaded as the targets configuration. If the file does not exist,
+//! will be loaded as the target configuration. If the file does not exist,
 //! rustc will search each directory in the environment variable
 //! `RUST_TARGET_PATH` for a file named `TRIPLE.json`. The first one found will
 //! be loaded. If no file is found in any of those directories, a fatal error
 //! will be given.
 //!
 //! Projects defining their own targets should use
-//! `--targets=path/to/my-awesome-platform.json` instead of adding to
+//! `--target=path/to/my-awesome-platform.json` instead of adding to
 //! `RUST_TARGET_PATH`.
 //!
-//! # Defining a new targets
+//! # Defining a new target
 //!
 //! Targets are defined using [JSON](https://json.org/). The `Target` struct in
 //! this module defines the format the JSON file should take, though each
 //! underscore in the field names should be replaced with a hyphen (`-`) in the
-//! JSON file. Some fields are required in every targets specification, such as
-//! `llvm-targets`, `targets-endian`, `targets-pointer-width`, `data-layout`,
+//! JSON file. Some fields are required in every target specification, such as
+//! `llvm-target`, `target-endian`, `target-pointer-width`, `data-layout`,
 //! `arch`, and `os`. In general, options passed to rustc with `-C` override
-//! the targets's settings, though `targets-feature` and `link-args` will *add*
-//! to the list specified by the targets, rather than replace.
+//! the target's settings, though `target-feature` and `link-args` will *add*
+//! to the list specified by the target, rather than replace.
 
 use crate::abi::call::Conv;
 use crate::abi::{Endian, Integer, Size, TargetDataLayout, TargetDataLayoutErrors};
@@ -81,7 +81,7 @@ pub enum Lld {
 /// of classes that we call "linker flavors".
 ///
 /// Technically, it's not even necessary, we can nearly always infer the flavor from linker name
-/// and targets properties like `is_like_windows`/`is_like_osx`/etc. However, the PRs originally
+/// and target properties like `is_like_windows`/`is_like_osx`/etc. However, the PRs originally
 /// introducing `-Clinker-flavor` (#40018 and friends) were aiming to reduce this kind of inference
 /// and provide something certain and explicitly specified instead, and that design goal is still
 /// relevant now.
@@ -92,10 +92,10 @@ pub enum Lld {
 /// `-flavor LLD_FLAVOR` argument to choose which logic to use. Our shipped `rust-lld` in
 /// particular is not named in such specific way, so it needs the flavor option, so we make our
 /// linker flavors sufficiently fine-grained to satisfy LLD without inferring its flavor from other
-/// targets properties, in accordance with the first design goal.
+/// target properties, in accordance with the first design goal.
 ///
-/// The first component of the flavor is tightly coupled with the compilation targets,
-/// while the `Cc` and `Lld` flags can vary within the same targets.
+/// The first component of the flavor is tightly coupled with the compilation target,
+/// while the `Cc` and `Lld` flags can vary within the same target.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub enum LinkerFlavor {
     /// Unix-like linker with GNU extensions (both naked and compiler-wrapped forms).
@@ -128,7 +128,7 @@ pub enum LinkerFlavor {
 }
 
 /// Linker flavors available externally through command line (`-Clinker-flavor`)
-/// or json targets specifications.
+/// or json target specifications.
 /// This set has accumulated historically, and contains both (stable and unstable) legacy values, as
 /// well as modern ones matching the internal linker flavors (`LinkerFlavor`).
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
@@ -210,9 +210,9 @@ impl ToJson for LldFlavor {
 }
 
 impl LinkerFlavor {
-    /// At this point the targets's reference linker flavor doesn't yet exist and we need to infer
+    /// At this point the target's reference linker flavor doesn't yet exist and we need to infer
     /// it. The inference always succeeds and gives some result, and we don't report any flavor
-    /// incompatibility errors for json targets specs. The CLI flavor is used as the main source
+    /// incompatibility errors for json target specs. The CLI flavor is used as the main source
     /// of truth, other flags are used in case of ambiguities.
     fn from_cli_json(cli: LinkerFlavorCli, lld_flavor: LldFlavor, is_gnu: bool) -> LinkerFlavor {
         match cli {
@@ -310,7 +310,7 @@ impl LinkerFlavor {
             .and_then(|(lhs, rhs)| rhs.chars().all(char::is_numeric).then_some(lhs))
             .unwrap_or(linker_stem);
 
-        // GCC/Clang can have an optional targets prefix.
+        // GCC/Clang can have an optional target prefix.
         if stem == "emcc"
             || stem == "gcc"
             || stem.ends_with("-gcc")
@@ -362,7 +362,7 @@ impl LinkerFlavor {
 
     pub fn check_compatibility(self, cli: LinkerFlavorCli) -> Option<String> {
         let compatible = |cli| {
-            // The CLI flavor should be compatible with the targets if:
+            // The CLI flavor should be compatible with the target if:
             match (self, cli) {
                 // 1. they are counterparts: they have the same principal flavor.
                 (LinkerFlavor::Gnu(..), LinkerFlavorCli::Gnu(..))
@@ -374,7 +374,7 @@ impl LinkerFlavor {
                 | (LinkerFlavor::Bpf, LinkerFlavorCli::Bpf)
                 | (LinkerFlavor::Llbc, LinkerFlavorCli::Llbc)
                 | (LinkerFlavor::Ptx, LinkerFlavorCli::Ptx) => return true,
-                // 2. The linker flavor is independent of targets and compatible
+                // 2. The linker flavor is independent of target and compatible
                 (LinkerFlavor::Ptx, LinkerFlavorCli::Llbc) => return true,
                 _ => {}
             }
@@ -448,6 +448,28 @@ impl LinkerFlavor {
             | LinkerFlavor::Ptx => false,
         }
     }
+
+    /// For flavors with an `Lld` component, ensure it's enabled. Otherwise, returns the given
+    /// flavor unmodified.
+    pub fn with_lld_enabled(self) -> LinkerFlavor {
+        match self {
+            LinkerFlavor::Gnu(cc, Lld::No) => LinkerFlavor::Gnu(cc, Lld::Yes),
+            LinkerFlavor::Darwin(cc, Lld::No) => LinkerFlavor::Darwin(cc, Lld::Yes),
+            LinkerFlavor::Msvc(Lld::No) => LinkerFlavor::Msvc(Lld::Yes),
+            _ => self,
+        }
+    }
+
+    /// For flavors with an `Lld` component, ensure it's disabled. Otherwise, returns the given
+    /// flavor unmodified.
+    pub fn with_lld_disabled(self) -> LinkerFlavor {
+        match self {
+            LinkerFlavor::Gnu(cc, Lld::Yes) => LinkerFlavor::Gnu(cc, Lld::No),
+            LinkerFlavor::Darwin(cc, Lld::Yes) => LinkerFlavor::Darwin(cc, Lld::No),
+            LinkerFlavor::Msvc(Lld::Yes) => LinkerFlavor::Msvc(Lld::No),
+            _ => self,
+        }
+    }
 }
 
 macro_rules! linker_flavor_cli_impls {
@@ -513,27 +535,27 @@ impl ToJson for LinkerFlavorCli {
     }
 }
 
-/// The different `-Clink-self-contained` options that can be specified in a targets spec:
+/// The different `-Clink-self-contained` options that can be specified in a target spec:
 /// - enabling or disabling in bulk
-/// - some targets-specific pieces of inference to determine whether to use self-contained linking
+/// - some target-specific pieces of inference to determine whether to use self-contained linking
 ///   if `-Clink-self-contained` is not specified explicitly (e.g. on musl/mingw)
 /// - explicitly enabling some of the self-contained linking components, e.g. the linker component
 ///   to use `rust-lld`
 #[derive(Clone, Copy, PartialEq, Debug)]
 pub enum LinkSelfContainedDefault {
-    /// The targets spec explicitly enables self-contained linking.
+    /// The target spec explicitly enables self-contained linking.
     True,
 
-    /// The targets spec explicitly disables self-contained linking.
+    /// The target spec explicitly disables self-contained linking.
     False,
 
-    /// The targets spec requests that the self-contained mode is inferred, in the context of musl.
+    /// The target spec requests that the self-contained mode is inferred, in the context of musl.
     InferredForMusl,
 
-    /// The targets spec requests that the self-contained mode is inferred, in the context of mingw.
+    /// The target spec requests that the self-contained mode is inferred, in the context of mingw.
     InferredForMingw,
 
-    /// The targets spec explicitly enables a list of self-contained linking components: e.g. for
+    /// The target spec explicitly enables a list of self-contained linking components: e.g. for
     /// targets opting into a subset of components like the CLI's `-C link-self-contained=+linker`.
     WithComponents(LinkSelfContainedComponents),
 }
@@ -575,13 +597,13 @@ impl ToJson for LinkSelfContainedDefault {
 }
 
 impl LinkSelfContainedDefault {
-    /// Returns whether the targets spec has self-contained linking explicitly disabled. Used to emit
+    /// Returns whether the target spec has self-contained linking explicitly disabled. Used to emit
     /// errors if the user then enables it on the CLI.
     pub fn is_disabled(self) -> bool {
         self == LinkSelfContainedDefault::False
     }
 
-    /// Returns whether the targets spec explicitly requests self-contained linking, i.e. not via
+    /// Returns whether the target spec explicitly requests self-contained linking, i.e. not via
     /// inference.
     pub fn is_linker_enabled(self) -> bool {
         match self {
@@ -695,6 +717,58 @@ impl ToJson for LinkSelfContainedComponents {
             .collect();
 
         components.to_json()
+    }
+}
+
+bitflags::bitflags! {
+    /// The `-Z linker-features` components that can individually be enabled or disabled.
+    ///
+    /// They are feature flags intended to be a more flexible mechanism than linker flavors, and
+    /// also to prevent a combinatorial explosion of flavors whenever a new linker feature is
+    /// required. These flags are "generic", in the sense that they can work on multiple targets on
+    /// the CLI. Otherwise, one would have to select different linkers flavors for each target.
+    ///
+    /// Here are some examples of the advantages they offer:
+    /// - default feature sets for principal flavors, or for specific targets.
+    /// - flavor-specific features: for example, clang offers automatic cross-linking with
+    ///   `--target`, which gcc-style compilers don't support. The *flavor* is still a C/C++
+    ///   compiler, and we don't need to multiply the number of flavors for this use-case. Instead,
+    ///   we can have a single `+target` feature.
+    /// - umbrella features: for example if clang accumulates more features in the future than just
+    ///   the `+target` above. That could be modeled as `+clang`.
+    /// - niche features for resolving specific issues: for example, on Apple targets the linker
+    ///   flag implementing the `as-needed` native link modifier (#99424) is only possible on
+    ///   sufficiently recent linker versions.
+    /// - still allows for discovery and automation, for example via feature detection. This can be
+    ///   useful in exotic environments/build systems.
+    #[derive(Clone, Copy, PartialEq, Eq, Default)]
+    pub struct LinkerFeatures: u8 {
+        /// Invoke the linker via a C/C++ compiler (e.g. on most unix targets).
+        const CC  = 1 << 0;
+        /// Use the lld linker, either the system lld or the self-contained linker `rust-lld`.
+        const LLD = 1 << 1;
+    }
+}
+rustc_data_structures::external_bitflags_debug! { LinkerFeatures }
+
+impl LinkerFeatures {
+    /// Parses a single `-Z linker-features` well-known feature, not a set of flags.
+    pub fn from_str(s: &str) -> Option<LinkerFeatures> {
+        Some(match s {
+            "cc" => LinkerFeatures::CC,
+            "lld" => LinkerFeatures::LLD,
+            _ => return None,
+        })
+    }
+
+    /// Returns whether the `lld` linker feature is enabled.
+    pub fn is_lld_enabled(self) -> bool {
+        self.contains(LinkerFeatures::LLD)
+    }
+
+    /// Returns whether the `cc` linker feature is enabled.
+    pub fn is_cc_enabled(self) -> bool {
+        self.contains(LinkerFeatures::CC)
     }
 }
 
@@ -1030,10 +1104,10 @@ impl fmt::Display for LinkOutputKind {
 pub type LinkArgs = BTreeMap<LinkerFlavor, Vec<StaticCow<str>>>;
 pub type LinkArgsCli = BTreeMap<LinkerFlavorCli, Vec<StaticCow<str>>>;
 
-/// Which kind of debuginfo does the targets use?
+/// Which kind of debuginfo does the target use?
 ///
-/// Useful in determining whether a targets supports Split DWARF (a targets with
-/// `DebuginfoKind::Dwarf` and supporting `SplitDebuginfo::Unpacked` for examples).
+/// Useful in determining whether a target supports Split DWARF (a target with
+/// `DebuginfoKind::Dwarf` and supporting `SplitDebuginfo::Unpacked` for example).
 #[derive(Clone, Copy, Debug, Default, Eq, Hash, PartialEq)]
 pub enum DebuginfoKind {
     /// DWARF debuginfo (such as that used on `x86_64_unknown_linux_gnu`).
@@ -1394,7 +1468,7 @@ macro_rules! supported_targets {
                 _ => return None,
             };
             t.is_builtin = true;
-            debug!("got builtin targets: {:?}", t);
+            debug!("got builtin target: {:?}", t);
             Some(t)
         }
 
@@ -1557,6 +1631,9 @@ supported_targets! {
     ("aarch64-apple-watchos", aarch64_apple_watchos),
     ("aarch64-apple-watchos-sim", aarch64_apple_watchos_sim),
 
+    ("aarch64-apple-visionos", aarch64_apple_visionos),
+    ("aarch64-apple-visionos-sim", aarch64_apple_visionos_sim),
+
     ("armebv7r-none-eabi", armebv7r_none_eabi),
     ("armebv7r-none-eabihf", armebv7r_none_eabihf),
     ("armv7r-none-eabi", armv7r_none_eabi),
@@ -1621,10 +1698,13 @@ supported_targets! {
     ("riscv32i-unknown-none-elf", riscv32i_unknown_none_elf),
     ("riscv32im-risc0-zkvm-elf", riscv32im_risc0_zkvm_elf),
     ("riscv32im-unknown-none-elf", riscv32im_unknown_none_elf),
+    ("riscv32ima-unknown-none-elf", riscv32ima_unknown_none_elf),
     ("riscv32imc-unknown-none-elf", riscv32imc_unknown_none_elf),
     ("riscv32imc-esp-espidf", riscv32imc_esp_espidf),
     ("riscv32imac-esp-espidf", riscv32imac_esp_espidf),
     ("riscv32imafc-esp-espidf", riscv32imafc_esp_espidf),
+    ("aarch64-unknown-rtsmart", aarch64_unknown_rtsmart),
+    ("armv7-unknown-rtsmart", armv7_unknown_rtsmart),
 
     ("riscv32imac-unknown-none-elf", riscv32imac_unknown_none_elf),
     ("riscv32imafc-unknown-none-elf", riscv32imafc_unknown_none_elf),
@@ -1701,8 +1781,6 @@ supported_targets! {
     ("aarch64-unknown-linux-ohos", aarch64_unknown_linux_ohos),
     ("armv7-unknown-linux-ohos", armv7_unknown_linux_ohos),
     ("x86_64-unknown-linux-ohos", x86_64_unknown_linux_ohos),
-
-    ("aarch64-unknown-rtsmart", aarch64_unknown_rtsmart),
 }
 
 /// Cow-Vec-Str: Cow<'static, [Cow<'static, str>]>
@@ -1721,7 +1799,7 @@ macro_rules! cvs {
 
 pub(crate) use cvs;
 
-/// Warnings encountered when parsing the targets `json`.
+/// Warnings encountered when parsing the target `json`.
 ///
 /// Includes fields that weren't recognized and fields that don't have the expected type.
 #[derive(Debug, PartialEq)]
@@ -1739,13 +1817,13 @@ impl TargetWarnings {
         let mut warnings = vec![];
         if !self.unused_fields.is_empty() {
             warnings.push(format!(
-                "targets json file contains unused fields: {}",
+                "target json file contains unused fields: {}",
                 self.unused_fields.join(", ")
             ));
         }
         if !self.incorrect_type.is_empty() {
             warnings.push(format!(
-                "targets json file contains fields whose value doesn't have the correct json type: {}",
+                "target json file contains fields whose value doesn't have the correct json type: {}",
                 self.incorrect_type.join(", ")
             ));
         }
@@ -1753,15 +1831,15 @@ impl TargetWarnings {
     }
 }
 
-/// Everything `rustc` knows about how to compile for a specific targets.
+/// Everything `rustc` knows about how to compile for a specific target.
 ///
 /// Every field here must be specified, and has no default value.
 #[derive(PartialEq, Clone, Debug)]
 pub struct Target {
     /// Target triple to pass to LLVM.
     pub llvm_target: StaticCow<str>,
-    /// Metadata about a targets, for examples the description or tier.
-    /// Used for generating targets documentation.
+    /// Metadata about a target, for example the description or tier.
+    /// Used for generating target documentation.
     pub metadata: TargetMetadata,
     /// Number of bits in a pointer. Influences the `target_pointer_width` `cfg` variable.
     pub pointer_width: u32,
@@ -1774,19 +1852,19 @@ pub struct Target {
     pub options: TargetOptions,
 }
 
-/// Metadata about a targets like the description or tier.
+/// Metadata about a target like the description or tier.
 /// Part of #120745.
 /// All fields are optional for now, but intended to be required in the future.
 #[derive(Default, PartialEq, Clone, Debug)]
 pub struct TargetMetadata {
-    /// A short description of the targets including platform requirements,
-    /// for examples "64-bit Linux (kernel 3.2+, glibc 2.17+)".
+    /// A short description of the target including platform requirements,
+    /// for example "64-bit Linux (kernel 3.2+, glibc 2.17+)".
     pub description: Option<StaticCow<str>>,
-    /// The tier of the targets. 1, 2 or 3.
+    /// The tier of the target. 1, 2 or 3.
     pub tier: Option<u64>,
-    /// Whether the Rust project ships host tools for a targets.
+    /// Whether the Rust project ships host tools for a target.
     pub host_tools: Option<bool>,
-    /// Whether a targets has the `std` library. This is usually true for targets running
+    /// Whether a target has the `std` library. This is usually true for targets running
     /// on an operating system.
     pub std: Option<bool>,
 }
@@ -1841,7 +1919,7 @@ impl HasTargetSpec for Target {
 
 type StaticCow<T> = Cow<'static, T>;
 
-/// Optional aspects of a targets specification.
+/// Optional aspects of a target specification.
 ///
 /// This has an implementation of `Default`, see each field for what the default is. In general,
 /// these try to take "minimal defaults" that don't assume anything about the runtime they run in.
@@ -1851,7 +1929,7 @@ type StaticCow<T> = Cow<'static, T>;
 /// through `Deref` impls.
 #[derive(PartialEq, Clone, Debug)]
 pub struct TargetOptions {
-    /// Whether the targets is built-in or loaded from a custom targets specification.
+    /// Whether the target is built-in or loaded from a custom target specification.
     pub is_builtin: bool,
 
     /// Used as the `target_endian` `cfg` variable. Defaults to little endian.
@@ -1859,7 +1937,7 @@ pub struct TargetOptions {
     /// Width of c_int type. Defaults to "32".
     pub c_int_width: StaticCow<str>,
     /// OS name to use for conditional compilation (`target_os`). Defaults to "none".
-    /// "none" implies a bare metal targets without `std` library.
+    /// "none" implies a bare metal target without `std` library.
     /// A couple of targets having `std` also use "unknown" as an `os` value,
     /// but they are exceptions.
     pub os: StaticCow<str>,
@@ -1926,32 +2004,32 @@ pub struct TargetOptions {
     /// Default CPU to pass to LLVM. Corresponds to `llc -mcpu=$cpu`. Defaults
     /// to "generic".
     pub cpu: StaticCow<str>,
-    /// Default targets features to pass to LLVM. These features will *always* be
+    /// Default target features to pass to LLVM. These features will *always* be
     /// passed, and cannot be disabled even via `-C`. Corresponds to `llc
     /// -mattr=$features`.
     pub features: StaticCow<str>,
     /// Direct or use GOT indirect to reference external data symbols
     pub direct_access_external_data: Option<bool>,
-    /// Whether dynamic linking is available on this targets. Defaults to false.
+    /// Whether dynamic linking is available on this target. Defaults to false.
     pub dynamic_linking: bool,
     /// Whether dynamic linking can export TLS globals. Defaults to true.
     pub dll_tls_export: bool,
     /// If dynamic linking is available, whether only cdylibs are supported.
     pub only_cdylib: bool,
-    /// Whether executables are available on this targets. Defaults to true.
+    /// Whether executables are available on this target. Defaults to true.
     pub executables: bool,
     /// Relocation model to use in object file. Corresponds to `llc
     /// -relocation-model=$relocation_model`. Defaults to `Pic`.
     pub relocation_model: RelocModel,
     /// Code model to use. Corresponds to `llc -code-model=$code_model`.
-    /// Defaults to `None` which means "inherited from the base LLVM targets".
+    /// Defaults to `None` which means "inherited from the base LLVM target".
     pub code_model: Option<CodeModel>,
     /// TLS model to use. Options are "global-dynamic" (default), "local-dynamic", "initial-exec"
     /// and "local-exec". This is similar to the -ftls-model option in GCC/Clang.
     pub tls_model: TlsModel,
     /// Do not emit code that uses the "red zone", if the ABI has one. Defaults to false.
     pub disable_redzone: bool,
-    /// Frame pointer mode for this targets. Defaults to `MayOmit`.
+    /// Frame pointer mode for this target. Defaults to `MayOmit`.
     pub frame_pointer: FramePointer,
     /// Emit each function in its own section. Defaults to true.
     pub function_sections: bool,
@@ -1965,37 +2043,37 @@ pub struct TargetOptions {
     pub staticlib_prefix: StaticCow<str>,
     /// String to append to the name of every static library. Defaults to ".a".
     pub staticlib_suffix: StaticCow<str>,
-    /// Values of the `target_family` cfg set for this targets.
+    /// Values of the `target_family` cfg set for this target.
     ///
     /// Common options are: "unix", "windows". Defaults to no families.
     ///
     /// See <https://doc.rust-lang.org/reference/conditional-compilation.html#target_family>.
     pub families: StaticCow<[StaticCow<str>]>,
-    /// Whether the targets toolchain's ABI supports returning small structs as an integer.
+    /// Whether the target toolchain's ABI supports returning small structs as an integer.
     pub abi_return_struct_as_int: bool,
-    /// Whether the targets toolchain is like AIX's. Linker options on AIX are special and it uses
+    /// Whether the target toolchain is like AIX's. Linker options on AIX are special and it uses
     /// XCOFF as binary format. Defaults to false.
     pub is_like_aix: bool,
-    /// Whether the targets toolchain is like macOS's. Only useful for compiling against iOS/macOS,
+    /// Whether the target toolchain is like macOS's. Only useful for compiling against iOS/macOS,
     /// in particular running dsymutil and some other stuff like `-dead_strip`. Defaults to false.
     /// Also indiates whether to use Apple-specific ABI changes, such as extending function
     /// parameters to 32-bits.
     pub is_like_osx: bool,
-    /// Whether the targets toolchain is like Solaris's.
+    /// Whether the target toolchain is like Solaris's.
     /// Only useful for compiling against Illumos/Solaris,
     /// as they have a different set of linker flags. Defaults to false.
     pub is_like_solaris: bool,
-    /// Whether the targets is like Windows.
+    /// Whether the target is like Windows.
     /// This is a combination of several more specific properties represented as a single flag:
-    ///   - The targets uses a Windows ABI,
+    ///   - The target uses a Windows ABI,
     ///   - uses PE/COFF as a format for object code,
     ///   - uses Windows-style dllexport/dllimport for shared libraries,
     ///   - uses import libraries and .def files for symbol exports,
     ///   - executables support setting a subsystem.
     pub is_like_windows: bool,
-    /// Whether the targets is like MSVC.
+    /// Whether the target is like MSVC.
     /// This is a combination of several more specific properties represented as a single flag:
-    ///   - The targets has all the properties from `is_like_windows`
+    ///   - The target has all the properties from `is_like_windows`
     ///     (for in-tree targets "is_like_msvc ⇒ is_like_windows" is ensured by a unit test),
     ///   - has some MSVC-specific Windows ABI properties,
     ///   - uses a link.exe-like linker,
@@ -2003,9 +2081,9 @@ pub struct TargetOptions {
     ///   - uses SEH-based unwinding,
     ///   - supports control flow guard mechanism.
     pub is_like_msvc: bool,
-    /// Whether a targets toolchain is like WASM.
+    /// Whether a target toolchain is like WASM.
     pub is_like_wasm: bool,
-    /// Whether a targets toolchain is like Android, implying a Linux kernel and a Bionic libc
+    /// Whether a target toolchain is like Android, implying a Linux kernel and a Bionic libc
     pub is_like_android: bool,
     /// Default supported version of DWARF on this platform.
     /// Useful because some platforms (osx, bsd) only want up to DWARF2.
@@ -2030,7 +2108,7 @@ pub struct TargetOptions {
     pub position_independent_executables: bool,
     /// Executables that are both statically linked and position-independent are supported.
     pub static_position_independent_executables: bool,
-    /// Determines if the targets always requires using the PLT for indirect
+    /// Determines if the target always requires using the PLT for indirect
     /// library calls or not. This controls the default value of the `-Z plt` flag.
     pub plt_by_default: bool,
     /// Either partial, full, or off. Full RELRO makes the dynamic linker
@@ -2048,13 +2126,13 @@ pub struct TargetOptions {
     /// `argc` and `argv` values.
     pub main_needs_argc_argv: bool,
 
-    /// Flag indicating whether #[thread_local] is available for this targets.
+    /// Flag indicating whether #[thread_local] is available for this target.
     pub has_thread_local: bool,
     /// This is mainly for easy compatibility with emscripten.
     /// If we give emcc .o files that are actually .bc files it
     /// will 'just work'.
     pub obj_is_bitcode: bool,
-    /// Whether the targets requires that emitted object code includes bitcode.
+    /// Whether the target requires that emitted object code includes bitcode.
     pub forces_embed_bitcode: bool,
     /// Content of the LLVM cmdline section associated with embedded bitcode.
     pub bitcode_llvm_cmdline: StaticCow<str>,
@@ -2065,7 +2143,7 @@ pub struct TargetOptions {
     /// Don't use this field; instead use the `.max_atomic_width()` method.
     pub max_atomic_width: Option<u64>,
 
-    /// Whether the targets supports atomic CAS operations natively
+    /// Whether the target supports atomic CAS operations natively
     pub atomic_cas: bool,
 
     /// Panic strategy: "unwind" or "abort"
@@ -2087,30 +2165,33 @@ pub struct TargetOptions {
     /// Default number of codegen units to use in debug mode
     pub default_codegen_units: Option<u64>,
 
-    /// Default codegen backend used for this targets. Defaults to `None`.
+    /// Default codegen backend used for this target. Defaults to `None`.
     ///
     /// If `None`, then `CFG_DEFAULT_CODEGEN_BACKEND` environmental variable captured when
     /// compiling `rustc` will be used instead (or llvm if it is not set).
     ///
     /// N.B. when *using* the compiler, backend can always be overridden with `-Zcodegen-backend`.
+    ///
+    /// This was added by WaffleLapkin in #116793. The motivation is a rustc fork that requires a
+    /// custom codegen backend for a particular target.
     pub default_codegen_backend: Option<StaticCow<str>>,
 
     /// Whether to generate trap instructions in places where optimization would
     /// otherwise produce control flow that falls through into unrelated memory.
     pub trap_unreachable: bool,
 
-    /// This targets requires everything to be compiled with LTO to emit a final
-    /// executable, aka there is no native linker for this targets.
+    /// This target requires everything to be compiled with LTO to emit a final
+    /// executable, aka there is no native linker for this target.
     pub requires_lto: bool,
 
-    /// This targets has no support for threads.
+    /// This target has no support for threads.
     pub singlethread: bool,
 
     /// Whether library functions call lowering/optimization is disabled in LLVM
-    /// for this targets unconditionally.
+    /// for this target unconditionally.
     pub no_builtins: bool,
 
-    /// The default visibility for symbols in this targets should be "hidden"
+    /// The default visibility for symbols in this target should be "hidden"
     /// rather than "default".
     ///
     /// This value typically shouldn't be accessed directly, but through
@@ -2127,12 +2208,12 @@ pub struct TargetOptions {
     pub requires_uwtable: bool,
 
     /// Whether or not to emit `uwtable` attributes on functions if `-C force-unwind-tables`
-    /// is not specified and `uwtable` is not required on this targets.
+    /// is not specified and `uwtable` is not required on this target.
     pub default_uwtable: bool,
 
     /// Whether or not SIMD types are passed by reference in the Rust ABI,
-    /// typically required if a targets can be compiled with a mixed set of
-    /// targets features. This is `true` by default, and `false` for targets like
+    /// typically required if a target can be compiled with a mixed set of
+    /// target features. This is `true` by default, and `false` for targets like
     /// wasm32 where the whole program either has simd or not.
     pub simd_types_indirect: bool,
 
@@ -2144,7 +2225,7 @@ pub struct TargetOptions {
     pub override_export_symbols: Option<StaticCow<[StaticCow<str>]>>,
 
     /// Determines how or whether the MergeFunctions LLVM pass should run for
-    /// this targets. Either "disabled", "trampolines", or "aliases".
+    /// this target. Either "disabled", "trampolines", or "aliases".
     /// The MergeFunctions pass is generally useful, but some targets may need
     /// to opt out. The default is "aliases".
     ///
@@ -2175,23 +2256,23 @@ pub struct TargetOptions {
     /// (only has effect if the linker is `ld`-like).
     pub eh_frame_header: bool,
 
-    /// Is true if the targets is an ARM architecture using thumb v1 which allows for
+    /// Is true if the target is an ARM architecture using thumb v1 which allows for
     /// thumb and arm interworking.
     pub has_thumb_interworking: bool,
 
-    /// Which kind of debuginfo is used by this targets?
+    /// Which kind of debuginfo is used by this target?
     pub debuginfo_kind: DebuginfoKind,
     /// How to handle split debug information, if at all. Specifying `None` has
-    /// targets-specific meaning.
+    /// target-specific meaning.
     pub split_debuginfo: SplitDebuginfo,
-    /// Which kinds of split debuginfo are supported by the targets?
+    /// Which kinds of split debuginfo are supported by the target?
     pub supported_split_debuginfo: StaticCow<[SplitDebuginfo]>,
 
-    /// The sanitizers supported by this targets
+    /// The sanitizers supported by this target
     ///
     /// Note that the support here is at a codegen level. If the machine code with sanitizer
-    /// enabled can generated on this targets, but the necessary supporting libraries are not
-    /// distributed with the targets, the sanitizer should still appear in this list for the targets.
+    /// enabled can generated on this target, but the necessary supporting libraries are not
+    /// distributed with the target, the sanitizer should still appear in this list for the target.
     pub supported_sanitizers: SanitizerSet,
 
     /// If present it's a default value to use for adjusting the C ABI.
@@ -2203,7 +2284,7 @@ pub struct TargetOptions {
     /// Whether or not the DWARF `.debug_aranges` section should be generated.
     pub generate_arange_section: bool,
 
-    /// Whether the targets supports stack canary checks. `true` by default,
+    /// Whether the target supports stack canary checks. `true` by default,
     /// since this is most common among tier 1 and tier 2 targets.
     pub supports_stack_protector: bool,
 
@@ -2215,7 +2296,7 @@ pub struct TargetOptions {
     /// Default value is `Conv::C`, i.e. C call convention
     pub entry_abi: Conv,
 
-    /// Whether the targets supports XRay instrumentation.
+    /// Whether the target supports XRay instrumentation.
     pub supports_xray: bool,
 }
 
@@ -2315,7 +2396,7 @@ impl TargetOptions {
 }
 
 impl Default for TargetOptions {
-    /// Creates a set of "sane defaults" for any targets. This is still
+    /// Creates a set of "sane defaults" for any target. This is still
     /// incomplete, and if used for compilation, will certainly not work.
     fn default() -> TargetOptions {
         TargetOptions {
@@ -2458,7 +2539,7 @@ impl DerefMut for Target {
 }
 
 impl Target {
-    /// Given a function ABI, turn it into the correct ABI for this targets.
+    /// Given a function ABI, turn it into the correct ABI for this target.
     pub fn adjust_abi(&self, abi: Abi, c_variadic: bool) -> Abi {
         match abi {
             Abi::C { .. } => self.default_adjusted_cabi.unwrap_or(abi),
@@ -2557,19 +2638,19 @@ impl Target {
         })
     }
 
-    /// Minimum integer size in bits that this targets can perform atomic
+    /// Minimum integer size in bits that this target can perform atomic
     /// operations on.
     pub fn min_atomic_width(&self) -> u64 {
         self.min_atomic_width.unwrap_or(8)
     }
 
-    /// Maximum integer size in bits that this targets can perform atomic
+    /// Maximum integer size in bits that this target can perform atomic
     /// operations on.
     pub fn max_atomic_width(&self) -> u64 {
         self.max_atomic_width.unwrap_or_else(|| self.pointer_width.into())
     }
 
-    /// Loads a targets descriptor from a JSON object.
+    /// Loads a target descriptor from a JSON object.
     pub fn from_json(obj: Json) -> Result<(Target, TargetWarnings), String> {
         // While ugly, this code must remain this way to retain
         // compatibility with existing JSON fields and the internal
@@ -2580,21 +2661,21 @@ impl Target {
 
         let mut obj = match obj {
             Value::Object(obj) => obj,
-            _ => return Err("Expected JSON object for targets")?,
+            _ => return Err("Expected JSON object for target")?,
         };
 
         let mut get_req_field = |name: &str| {
             obj.remove(name)
                 .and_then(|j| j.as_str().map(str::to_string))
-                .ok_or_else(|| format!("Field {name} in targets specification is required"))
+                .ok_or_else(|| format!("Field {name} in target specification is required"))
         };
 
         let mut base = Target {
-            llvm_target: get_req_field("llvm-targets")?.into(),
+            llvm_target: get_req_field("llvm-target")?.into(),
             metadata: Default::default(),
-            pointer_width: get_req_field("targets-pointer-width")?
+            pointer_width: get_req_field("target-pointer-width")?
                 .parse::<u32>()
-                .map_err(|_| "targets-pointer-width must be an integer".to_string())?,
+                .map_err(|_| "target-pointer-width must be an integer".to_string())?,
             data_layout: get_req_field("data-layout")?.into(),
             arch: get_req_field("arch")?.into(),
             options: Default::default(),
@@ -3011,7 +3092,7 @@ impl Target {
                 })).unwrap_or(Ok(()))
             } );
             ($key_name:ident, TargetFamilies) => ( {
-                if let Some(value) = obj.remove("targets-family") {
+                if let Some(value) = obj.remove("target-family") {
                     if let Some(v) = value.as_array() {
                         base.$key_name = v.iter()
                             .map(|a| a.as_str().unwrap().to_string().into())
@@ -3035,11 +3116,11 @@ impl Target {
             } );
         }
 
-        if let Some(j) = obj.remove("targets-endian") {
+        if let Some(j) = obj.remove("target-endian") {
             if let Some(s) = j.as_str() {
                 base.endian = s.parse()?;
             } else {
-                incorrect_type.push("targets-endian".into())
+                incorrect_type.push("target-endian".into())
             }
         }
 
@@ -3054,7 +3135,7 @@ impl Target {
         }
 
         key!(is_builtin, bool);
-        key!(c_int_width = "targets-c-int-width");
+        key!(c_int_width = "target-c-int-width");
         key!(c_enum_min_bits, Option<u64>); // if None, matches c_int_width
         key!(os);
         key!(env);
@@ -3147,7 +3228,7 @@ impl Target {
         key!(limit_rdylib_exports, bool);
         key!(override_export_symbols, opt_list);
         key!(merge_functions, MergeFunctions)?;
-        key!(mcount = "targets-mcount");
+        key!(mcount = "target-mcount");
         key!(llvm_mcount_intrinsic, optional);
         key!(llvm_abiname);
         key!(relax_elf_relocations, bool);
@@ -3180,11 +3261,11 @@ impl Target {
         ))
     }
 
-    /// Load a built-in targets
+    /// Load a built-in target
     pub fn expect_builtin(target_triple: &TargetTriple) -> Target {
         match *target_triple {
             TargetTriple::TargetTriple(ref target_triple) => {
-                load_builtin(target_triple).expect("built-in targets")
+                load_builtin(target_triple).expect("built-in target")
             }
             TargetTriple::TargetJson { .. } => {
                 panic!("built-in targets doesn't support target-paths")
@@ -3192,10 +3273,10 @@ impl Target {
         }
     }
 
-    /// Search for a JSON file specifying the given targets triple.
+    /// Search for a JSON file specifying the given target triple.
     ///
-    /// If none is found in `$RUST_TARGET_PATH`, look for a file called `targets.json` inside the
-    /// sysroot under the targets-triple's `rustlib` directory. Note that it could also just be a
+    /// If none is found in `$RUST_TARGET_PATH`, look for a file called `target.json` inside the
+    /// sysroot under the target-triple's `rustlib` directory. Note that it could also just be a
     /// bare filename already, so also check for that. If one of the hardcoded targets we know
     /// about, just return it directly.
     ///
@@ -3237,19 +3318,19 @@ impl Target {
                     }
                 }
 
-                // Additionally look in the sysroot under `lib/rustlib/<triple>/targets.json`
+                // Additionally look in the sysroot under `lib/rustlib/<triple>/target.json`
                 // as a fallback.
                 let rustlib_path = crate::target_rustlib_path(sysroot, target_triple);
                 let p = PathBuf::from_iter([
                     Path::new(sysroot),
                     Path::new(&rustlib_path),
-                    Path::new("targets.json"),
+                    Path::new("target.json"),
                 ]);
                 if p.is_file() {
                     return load_file(&p);
                 }
 
-                Err(format!("Could not find specification for targets {target_triple:?}"))
+                Err(format!("Could not find specification for target {target_triple:?}"))
             }
             TargetTriple::TargetJson { ref contents, .. } => {
                 let obj = serde_json::from_str(contents).map_err(|e| e.to_string())?;
@@ -3312,13 +3393,13 @@ impl ToJson for Target {
 
         target_val!(llvm_target);
         target_val!(metadata);
-        d.insert("targets-pointer-width".to_string(), self.pointer_width.to_string().to_json());
+        d.insert("target-pointer-width".to_string(), self.pointer_width.to_string().to_json());
         target_val!(arch);
         target_val!(data_layout);
 
         target_option_val!(is_builtin);
-        target_option_val!(endian, "targets-endian");
-        target_option_val!(c_int_width, "targets-c-int-width");
+        target_option_val!(endian, "target-endian");
+        target_option_val!(c_int_width, "target-c-int-width");
         target_option_val!(os);
         target_option_val!(env);
         target_option_val!(abi);
@@ -3358,7 +3439,7 @@ impl ToJson for Target {
         target_option_val!(exe_suffix);
         target_option_val!(staticlib_prefix);
         target_option_val!(staticlib_suffix);
-        target_option_val!(families, "targets-family");
+        target_option_val!(families, "target-family");
         target_option_val!(abi_return_struct_as_int);
         target_option_val!(is_like_aix);
         target_option_val!(is_like_osx);
@@ -3404,7 +3485,7 @@ impl ToJson for Target {
         target_option_val!(limit_rdylib_exports);
         target_option_val!(override_export_symbols);
         target_option_val!(merge_functions);
-        target_option_val!(mcount, "targets-mcount");
+        target_option_val!(mcount, "target-mcount");
         target_option_val!(llvm_mcount_intrinsic);
         target_option_val!(llvm_abiname);
         target_option_val!(relax_elf_relocations);
@@ -3435,7 +3516,7 @@ impl ToJson for Target {
     }
 }
 
-/// Either a targets triple string or a path to a JSON file.
+/// Either a target triple string or a path to a JSON file.
 #[derive(Clone, Debug)]
 pub enum TargetTriple {
     TargetTriple(String),
@@ -3479,7 +3560,7 @@ impl Hash for TargetTriple {
     }
 }
 
-// Use a manual implementation to prevent encoding the targets json file path in the crate metadata
+// Use a manual implementation to prevent encoding the target json file path in the crate metadata
 impl<S: Encoder> Encodable<S> for TargetTriple {
     fn encode(&self, s: &mut S) {
         match self {
@@ -3513,32 +3594,32 @@ impl<D: Decoder> Decodable<D> for TargetTriple {
 }
 
 impl TargetTriple {
-    /// Creates a targets triple from the passed targets triple string.
+    /// Creates a target triple from the passed target triple string.
     pub fn from_triple(triple: &str) -> Self {
         TargetTriple::TargetTriple(triple.into())
     }
 
-    /// Creates a targets triple from the passed targets path.
+    /// Creates a target triple from the passed target path.
     pub fn from_path(path: &Path) -> Result<Self, io::Error> {
         let canonicalized_path = try_canonicalize(path)?;
         let contents = std::fs::read_to_string(&canonicalized_path).map_err(|err| {
             io::Error::new(
                 io::ErrorKind::InvalidInput,
-                format!("targets path {canonicalized_path:?} is not a valid file: {err}"),
+                format!("target path {canonicalized_path:?} is not a valid file: {err}"),
             )
         })?;
         let triple = canonicalized_path
             .file_stem()
-            .expect("targets path must not be empty")
+            .expect("target path must not be empty")
             .to_str()
-            .expect("targets path must be valid unicode")
+            .expect("target path must be valid unicode")
             .to_owned();
         Ok(TargetTriple::TargetJson { path_for_rustdoc: canonicalized_path, triple, contents })
     }
 
-    /// Returns a string triple for this targets.
+    /// Returns a string triple for this target.
     ///
-    /// If this targets is a path, the file name (without extension) is returned.
+    /// If this target is a path, the file name (without extension) is returned.
     pub fn triple(&self) -> &str {
         match *self {
             TargetTriple::TargetTriple(ref triple)
@@ -3546,9 +3627,9 @@ impl TargetTriple {
         }
     }
 
-    /// Returns an extended string triple for this targets.
+    /// Returns an extended string triple for this target.
     ///
-    /// If this targets is a path, a hash of the path is appended to the triple returned
+    /// If this target is a path, a hash of the path is appended to the triple returned
     /// by `triple()`.
     pub fn debug_triple(&self) -> String {
         use std::hash::DefaultHasher;

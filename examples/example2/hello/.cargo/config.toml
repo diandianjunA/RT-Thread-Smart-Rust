@@ -1,5 +1,11 @@
-[build]
-target = "aarch64-unknown-rtsmart"
+#[build]
+#target = "aarch64-unknown-rtsmart"
+#
+#[target.aarch64-unknown-rtsmart]
+#linker = "aarch64-linux-musleabi-gcc"
 
-[target.aarch64-unknown-rtsmart]
-linker = "aarch64-linux-musleabi-gcc"
+[build]
+target = "armv7-unknown-rtsmart"
+
+[target.armv7-unknown-rtsmart]
+linker = "arm-linux-musleabi-gcc"

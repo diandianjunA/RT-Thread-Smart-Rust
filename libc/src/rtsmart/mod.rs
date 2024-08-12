@@ -2327,10 +2327,8 @@ cfg(target_feature = "crt-static"))]
 #[link(name = "rtthread", kind = "static",
 cfg(target_feature = "crt-static"))]
 // #[link(name = "rtthread")]
-#[link(name = "gcc_eh", kind = "static",
-cfg(target_feature = "crt-static"))]
-#[link(name = "gcc", kind = "static",
-cfg(target_feature = "crt-static"))]
+// #[link(name = "gcc_eh", kind = "static", cfg(target_feature = "crt-static"))]
+// #[link(name = "gcc", kind = "static", cfg(target_feature = "crt-static"))]
 #[link(name = "util", cfg(not(target_feature = "crt-static")))]
 #[link(name = "rt", cfg(not(target_feature = "crt-static")))]
 #[link(name = "pthread", cfg(not(target_feature = "crt-static")))]

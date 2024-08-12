@@ -7,21 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f42d5ca-f0bc-4bae-807e-10bfef67ff85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../bench/c_bench/c_bench" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../img/logging_compile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../img/logging_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../img/semaphore_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example3/thread_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example3/thread_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example4/mutex_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example4/mutex_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example5/read_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../example5/read_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example8/param_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../example8/param_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/thread.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/thread.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../技术文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../技术文档.md" afterDir="false" />
-    </list>
+    <list default="true" id="8f42d5ca-f0bc-4bae-807e-10bfef67ff85" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +90,7 @@
       <workItem from="1720837189427" duration="571000" />
       <workItem from="1722351980830" duration="116000" />
       <workItem from="1722355271396" duration="249000" />
+      <workItem from="1722394678622" duration="745000" />
     </task>
     <servers />
   </component>

@@ -43,6 +43,7 @@ targets = [
     "armv7-unknown-linux-gnueabihf",
     "armv7-unknown-linux-musleabihf",
     "armv7-wrs-vxworks-eabihf",
+    "armv7-unknown-rtsmart",
     "armv7r-none-eabi",
     "armv7r-none-eabihf",
     "hexagon-unknown-linux-musl",

@@ -8,10 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="daaa18e9-6ea1-4266-861b-18f74a08c068" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../example3/thread_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../example3/thread_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rtsmart-std/src/thread.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rtsmart-std/src/thread.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../example7/log_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../example7/log_test/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,19 +29,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/diandianjun/os-educg/project2210132-226009",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.first.attach.projects": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/diandianjun/os-educg/project2210132-226009&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cargo.Run param_test">
     <configuration name="Run param_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package param_test --bin param_test" />
@@ -94,6 +91,7 @@
       <updated>1720838670030</updated>
       <workItem from="1720838671059" duration="520000" />
       <workItem from="1722351897980" duration="82000" />
+      <workItem from="1722395425381" duration="118000" />
     </task>
     <servers />
   </component>
