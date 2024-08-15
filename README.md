@@ -60,6 +60,11 @@ RT-Thread Smart（简称rt-smart）是适用于嵌入式平台的实时操作系
 4. 尝试将项目移植到真机上进行测试，使用树莓派开发板安装rt-smart环境，然后将当前项目编译出的Rust应用程序在开发板上跑进行测试。
 5. 将当前项目编译出的Rust应用程序与aarch64-linux-musleabi-gcc编译器编译出的C程序进行性能对比分析。
 
+### 决赛第二阶段
+
+1. aarch64架构的树莓派开发板缺乏社区支持，因此在决赛二阶段我们选择了RT-Thread官方出品的基于i.MX6ULL 单核ARM Cortex-A7 的 art pi smart 开发板用于测试
+2. 增加了Rust编译器中对于`armv7-unknown-rtsmart`编译平台的支持，以便支持新开发板的测试，同时也表明项目对不同CPU架构的平台具有普适性
+
 ## 项目目录结构
 
 代码和文档都存储Gitlab仓库中。以下是仓库目录和文件描述： 

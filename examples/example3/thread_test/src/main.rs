@@ -37,9 +37,11 @@ fn rust_main(_param: Param) {
     let t1 = Thread::new()
         .name("thread 1")
         .stack_size(4096)
+        .ticks(1)
         .start(run1.clone());
     let t2 = Thread::new()
         .name("thread 2")
         .stack_size(4096)
+        .ticks(1)
         .start(run2.clone());
 }

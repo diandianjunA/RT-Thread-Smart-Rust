@@ -21,8 +21,8 @@ pub fn thread_create(
             entry,
             param,
             stack_size,
-            priority,
-            tick,
+            25,
+            200,
         );
     }
     if raw == ptr::null_mut() {
