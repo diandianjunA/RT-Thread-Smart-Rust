@@ -4,6 +4,9 @@ use libc::{c_char, c_void, pthread_t, rt_err_t, rt_thread_create, rt_thread_dele
 
 pub type ThreadEntry = extern "C" fn(parameter: *mut c_void);
 
+pub const THREAD_PRIORITY: u8 = 25;
+pub const THREAD_TICK: u32 = 200;
+
 pub fn thread_create(
     name: &str,
     entry: ThreadEntry,
@@ -21,8 +24,8 @@ pub fn thread_create(
             entry,
             param,
             stack_size,
-            25,
-            200,
+            THREAD_PRIORITY,
+            THREAD_TICK,
         );
     }
     if raw == ptr::null_mut() {

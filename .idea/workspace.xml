@@ -25,18 +25,9 @@
     <cargoProject FILE="$PROJECT_DIR$/bench/rust_bench/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update technique document">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bench/c_bench/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/bench/c_bench/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example3/thread_test/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example3/thread_test/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example3/thread_test/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example3/thread_test/Cargo.toml" afterDir="false" />
+    <list default="true" id="97ea9683-ca20-4d7d-94b3-cdefa273cf6b" name="Changes" comment="update document">
       <change beforePath="$PROJECT_DIR$/examples/example3/thread_test/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example3/thread_test/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libc/build.rs" beforeDir="false" afterPath="$PROJECT_DIR$/libc/build.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/libc/src/rtsmart/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rtsmart-std/src/api/thread.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rtsmart-std/src/api/thread.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/技术文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/技术文档.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/技术文档.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +184,7 @@
       <workItem from="1722321838695" duration="14088000" />
       <workItem from="1723450758470" duration="4000000" />
       <workItem from="1723636950293" duration="780000" />
-      <workItem from="1723713333293" duration="2454000" />
+      <workItem from="1723713333293" duration="2568000" />
     </task>
     <task id="LOCAL-00001" summary="update work log">
       <option name="closed" value="true" />
@@ -483,7 +474,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722394407981</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="update document">
+      <option name="closed" value="true" />
+      <created>1723715828736</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1723715828736</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +524,8 @@
     <MESSAGE value="update example10" />
     <MESSAGE value="update readme" />
     <MESSAGE value="update technique document" />
-    <option name="LAST_COMMIT_MESSAGE" value="update technique document" />
+    <MESSAGE value="update document" />
+    <option name="LAST_COMMIT_MESSAGE" value="update document" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
